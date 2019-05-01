@@ -215,3 +215,8 @@ FakesAssemblies/
 **/*.Server/GeneratedArtifacts
 **/*.Server/ModelManifest.xml
 _Pvt_Extensions
+
+#Whitelist
+![Aa]ssets/**
+!libraries/opengl-toolkit/libraries/32bit/*
+!libraries/sfml-2.4.2-windows-vc15-32bit/lib/32bit/*
