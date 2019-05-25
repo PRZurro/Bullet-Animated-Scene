@@ -20,8 +20,22 @@ namespace prz
     {
     public:
     
-        Rigid_Body(const PString& name, PSPtr<btCollisionShape> collisionShape);
-        ~Rigid_Body();
+        Rigid_Body
+		(
+			const PString& name,
+			btVector3& origin,
+			btQuaternion& initialRotation,
+			RB_Construct_Info constructionInfo,
+			float scale = 1.f
+		);
+
+		~Rigid_Body();
+
+
+	public:
+
+		void update(float deltaTime);
+		virtual void auxiliar_update(float deltaTime) = 0;
 
 	public:
 		
@@ -31,21 +45,18 @@ namespace prz
 
 	public:
 
-		 PSPtr<gltModel> model() { return model_; }
-		 PSPtr<btRigidBody> rigidBody() { return rigidBody_; }
-		 PSPtr<btCollisionShape> collisionShape() { return collisionShape_; }
-		 PSPtr<btDefaultMotionState> motionState() { return motionState_; }
+		 PSPtr<gltModel> model() const { return model_; }
+		 PSPtr<btRigidBody> rigidBody() const { return rigidBody_; }
 		 float scale() { return scale_; }
+
+	protected:
+
+		void sync_model_with_rigid_body();
 
 	protected:
 
 		PSPtr<gltModel> model_;
 		PSPtr<btRigidBody> rigidBody_;
-		
-	protected:
-
-		PSPtr<btCollisionShape> collisionShape_;
-		PSPtr<btDefaultMotionState> motionState_;
 
 	protected:
 

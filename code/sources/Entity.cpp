@@ -8,17 +8,10 @@ namespace prz
 	{
 		for (auto& pair : rigidBodies_)
 		{
-			btTransform physicsTransform;
-			Matrix44 bulletTransform;
+			PSPtr<Rigid_Body> rigidBody = pair.second;
 
-			PSPtr<btRigidBody> rigidBody= *pair.second;
-			PSPtr<gltModel> model = *pair.second;
+			pair.second->update(deltaTime);
 
-			rigidBody->getMotionState()->getWorldTransform(physicsTransform);
-			physicsTransform.getOpenGLMatrix(glm::value_ptr(bulletTransform));
-
-			model->set_transformation(bulletTransform); 
-			model->scale(pair.second->scale()); // Reset the lost scale in the OpenGL matrix calculation from bullet
 		}
 	}
 }

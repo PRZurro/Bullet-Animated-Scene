@@ -20,6 +20,7 @@ namespace prz
 	class Sensor
 	{
 	public:
+
 		Sensor();
 		~Sensor();
 

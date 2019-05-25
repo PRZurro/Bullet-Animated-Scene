@@ -23,8 +23,22 @@ namespace prz
 	{
 	public:
 
-		Dynamic_Rigid_Body(const PString& name, PSPtr<btCollisionShape> collisionShape);
+		Dynamic_Rigid_Body
+		(
+			const PString& name,
+			btVector3& origin,
+			btQuaternion& initialRotation,
+			PSPtr<btCollisionShape> collisionShape,
+			btScalar mass,
+			btVector3 localInertia = btVector3(0, 0, 0),
+			float scale = 1.f
+		);
+
 		~Dynamic_Rigid_Body();
+
+	public:
+
+		void auxiliar_update(float deltaTime) override {}
 
 	};
 

@@ -23,8 +23,20 @@ namespace prz
 	{
 	public:
 
-		Static_Rigid_Body(const PString& name, PSPtr<btCollisionShape> collisionShape);
+		Static_Rigid_Body
+		(
+			const PString& name,
+			btVector3& origin,
+			btQuaternion& initialRotation,
+			RB_Construct_Info constructionInfo,
+			float scale = 1.f
+		);
+
 		~Static_Rigid_Body();
+
+	public:
+
+		void auxiliar_update(float deltaTime) override {}
 
 	};
 

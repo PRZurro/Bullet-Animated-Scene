@@ -2,12 +2,18 @@
 
 #include <Entity.hpp>
 #include <World.hpp>
+#include <Game_Manager.hpp>
 #include <Rigid_Body.hpp>
+#include <Collision_Listener.hpp>WW
+
 
 namespace prz
 {
 
 	Scene::Scene(Window& window) :
+		world_(make_shared<World>()),
+		gameManager_(make_shared<Game_Manager>(*this)),
+		collisionListener_(make_shared<Collision_Listener>(world_)),
 		window_(window),
 		renderer_(make_shared<gltRenderNode>()),
 		activeCamera_(make_shared< gltCamera>(20.f, 1.f, 50.f, 1.f))

@@ -25,6 +25,8 @@ namespace prz
 
 	class Entity;
 	class World;
+	class Game_Manager;
+	class Collision_Listener;
 
 	class Scene
 	{
@@ -80,7 +82,12 @@ namespace prz
 	protected:
 
 		PMap<PString, PSPtr<Entity>> entities_;
+
+	protected:
+
 		PSPtr<World> world_;
+		PSPtr<Game_Manager> gameManager_;
+		PSPtr<Collision_Listener> collisionListener_;
 
 	protected:
 

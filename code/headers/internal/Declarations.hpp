@@ -20,6 +20,10 @@
 namespace prz
 {
 
+	struct Rigid_Body_Construction_Info;
+
+	using RB_Construct_Info = Rigid_Body_Construction_Info;
+
 	const float mouseSensitivityX = 0.2f;
 	const float mouseSensitivityY = 0.2f;
 

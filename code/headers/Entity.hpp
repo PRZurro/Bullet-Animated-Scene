@@ -35,8 +35,6 @@ namespace prz
 
 		virtual void update(float deltaTime);
 
-		virtual void render() {}
-
 	public:
 
 		bool add_rigid_body(const PString& name, PSPtr<Rigid_Body> rigidBody)

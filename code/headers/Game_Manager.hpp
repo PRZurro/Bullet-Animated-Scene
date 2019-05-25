@@ -29,7 +29,6 @@ namespace prz
 	public:
 
 		void update();
-		
 
 	public:
 
