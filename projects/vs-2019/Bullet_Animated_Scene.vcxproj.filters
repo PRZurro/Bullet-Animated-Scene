@@ -78,6 +78,27 @@
     <ClCompile Include="..\..\code\sources\Collision_Listener.cpp">
       <Filter>Source Files\Bullet Physics</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\sources\Catapult.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Key.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Platform.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Projectile.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Stage.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Door.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Kinematic_Rigid_Body.cpp">
+      <Filter>Source Files\Bullet Physics\Rigid Bodies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\internal\Declarations.hpp">
@@ -152,8 +173,11 @@
     <ClInclude Include="..\..\code\headers\Stage.hpp">
       <Filter>Header Files\Entities</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\code\headers\Kinematic_Rigid_Body .hpp">
+      <Filter>Header Files\Bullet Physics\Rigid Bodies</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\code\headers\Rigid_Body.hpp">
-      <Filter>Header Files\Bullet Physics</Filter>
+      <Filter>Header Files\Bullet Physics\Rigid Bodies</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

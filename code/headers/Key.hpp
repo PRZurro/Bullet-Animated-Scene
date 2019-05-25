@@ -20,6 +20,9 @@ namespace prz
 	class Key : public Entity
 	{
 	public:
+
+		Key(Scene& scene, const PString& name);
+
 	protected:
 	private:
 	};

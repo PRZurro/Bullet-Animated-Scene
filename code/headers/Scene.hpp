@@ -73,6 +73,8 @@ namespace prz
 
 		PSPtr<Entity> get_entity(const PString& name) { return exists_entity(name) ? entities_[name] : PSPtr<Entity>(); }
 		PSPtr<btDiscreteDynamicsWorld> get_dynamics_world();
+		PSPtr<Game_Manager> gameManager() { return gameManager_; }
+		PSPtr<Collision_Listener> collisionListener() { return collisionListener_; }
 
 	public:
 

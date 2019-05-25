@@ -20,6 +20,9 @@ namespace prz
 	class Door : public Entity
 	{
 	public:
+		
+		Door(Scene& scene, const PString& name);
+
 	protected:
 	private:
 	};

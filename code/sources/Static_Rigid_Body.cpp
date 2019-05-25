@@ -9,10 +9,9 @@ namespace prz
 		const PString& name,
 		btVector3& origin,
 		btQuaternion& initialRotation,
-		RB_Construct_Info constructionInfo,
+		PSPtr<btCollisionShape> collisionShape,
 		float scale
 	) :
-		Rigid_Body(name, origin, initialRotation, constructionInfo)
-	{
-	}
+		Rigid_Body(name, origin, initialRotation, RB_Construct_Info(collisionShape, 0.f), scale)
+	{}
 }

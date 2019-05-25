@@ -20,6 +20,9 @@ namespace prz
 	class Catapult : public Entity
 	{
 	public:
+
+		Catapult(Scene& scene, const PString& name);
+		
 	protected:
 	private:
 	};

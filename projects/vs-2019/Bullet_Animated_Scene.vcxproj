@@ -11,15 +11,22 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\code\sources\Catapult.cpp" />
     <ClCompile Include="..\..\code\sources\Collision_Listener.cpp" />
+    <ClCompile Include="..\..\code\sources\Door.cpp" />
     <ClCompile Include="..\..\code\sources\Dynamic_Rigid_Body.cpp" />
     <ClCompile Include="..\..\code\sources\Entity.cpp" />
     <ClCompile Include="..\..\code\sources\Game.cpp" />
     <ClCompile Include="..\..\code\sources\Game_Manager.cpp" />
+    <ClCompile Include="..\..\code\sources\Key.cpp" />
+    <ClCompile Include="..\..\code\sources\Kinematic_Rigid_Body.cpp" />
     <ClCompile Include="..\..\code\sources\main.cpp" />
+    <ClCompile Include="..\..\code\sources\Platform.cpp" />
+    <ClCompile Include="..\..\code\sources\Projectile.cpp" />
     <ClCompile Include="..\..\code\sources\Rigid_Body.cpp" />
     <ClCompile Include="..\..\code\sources\Scene.cpp" />
     <ClCompile Include="..\..\code\sources\Sensor.cpp" />
+    <ClCompile Include="..\..\code\sources\Stage.cpp" />
     <ClCompile Include="..\..\code\sources\Static_Rigid_Body.cpp" />
     <ClCompile Include="..\..\code\sources\World.cpp" />
   </ItemGroup>
@@ -40,6 +47,7 @@
     <ClInclude Include="..\..\code\headers\internal\Declarations_OpenGL_Toolkit.hpp" />
     <ClInclude Include="..\..\code\headers\internal\Utilities.hpp" />
     <ClInclude Include="..\..\code\headers\Key.hpp" />
+    <ClInclude Include="..\..\code\headers\Kinematic_Rigid_Body .hpp" />
     <ClInclude Include="..\..\code\headers\Platform.hpp" />
     <ClInclude Include="..\..\code\headers\Projectile.hpp" />
     <ClInclude Include="..\..\code\headers\Rigid_Body.hpp" />

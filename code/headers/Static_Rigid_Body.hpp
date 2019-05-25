@@ -28,7 +28,7 @@ namespace prz
 			const PString& name,
 			btVector3& origin,
 			btQuaternion& initialRotation,
-			RB_Construct_Info constructionInfo,
+			PSPtr<btCollisionShape> collisionShape,
 			float scale = 1.f
 		);
 
@@ -36,7 +36,7 @@ namespace prz
 
 	public:
 
-		void auxiliar_update(float deltaTime) override {}
+		virtual void auxiliar_update(float deltaTime) override {}
 
 	};
 

@@ -20,6 +20,9 @@ namespace prz
 	class Platform : public Entity
 	{
 	public:
+
+		Platform(Scene& scene, const PString& name);
+
 	protected:
 	private:
 	};

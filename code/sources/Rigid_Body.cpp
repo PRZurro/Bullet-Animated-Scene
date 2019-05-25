@@ -1,6 +1,7 @@
 #include <Rigid_Body.hpp>
 
 #include <Rigid_Body_Construction_Info.hpp>
+#include <Utilities.hpp>
 
 namespace prz
 {
@@ -15,13 +16,7 @@ namespace prz
 	) :
 		scale_(scale)
 	{
-		btTransform transform;
-
-		transform.setIdentity();
-		transform.setOrigin(origin);
-		transform.setRotation(initialRotation);
-
-		constructionInfo.motionState = make_shared<btMotionState>(transform);
+		constructionInfo.motionState = make_shared<btMotionState>(create_transformation(origin, initialRotation));
 		rigidBody_ = make_shared<btRigidBody>(constructionInfo);
 
 		sync_model_with_rigid_body();
@@ -34,6 +29,16 @@ namespace prz
 		sync_model_with_rigid_body();
 		auxiliar_update(deltaTime);
 	}
+	void Rigid_Body::set_transformation(btTransform& newTransformation)
+	{
+		rigidBody_->setWorldTransform(newTransformation);
+	}
+
+	void Rigid_Body::reset_transformation(btVector3& newOrigin, btQuaternion& newRotation)
+	{
+		set_transformation(create_transformation(newOrigin, newRotation));
+	}
+
 	void Rigid_Body::sync_model_with_rigid_body()
 	{
 		btTransform physicsTransform;

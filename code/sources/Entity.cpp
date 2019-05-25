@@ -1,6 +1,8 @@
 #include "Entity.hpp"
 
-#include <Rigid_Body.hpp>
+#include <Dynamic_Rigid_Body.hpp>
+#include <Kinematic_Rigid_Body .hpp>
+#include <Static_Rigid_Body.hpp>
 
 namespace prz
 {
@@ -12,6 +14,13 @@ namespace prz
 
 			pair.second->update(deltaTime);
 
+		}
+	}
+	void Entity::translate(btVector3& translation)
+	{
+		for (auto& pair : kinematicRigidBodies_)
+		{
+			pair.second->translate(translation);
 		}
 	}
 }

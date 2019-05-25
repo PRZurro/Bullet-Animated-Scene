@@ -20,6 +20,9 @@ namespace prz
 	class Stage : public Entity
 	{
 	public:
+
+		Stage(Scene& scene, const PString& name);
+
 	protected:
 	private:
 	};

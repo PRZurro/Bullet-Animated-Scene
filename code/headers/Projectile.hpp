@@ -20,6 +20,9 @@ namespace prz
 	class Projectile : public Entity
 	{
 	public:
+
+		Projectile(Scene& scene, const PString& name);
+
 	protected:
 	private:
 	};

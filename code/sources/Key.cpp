@@ -2,5 +2,8 @@
 
 namespace prz
 {
-
+	Key::Key(Scene& scene, const PString& name) :
+		Entity(scene, name)
+	{
+	}
 }

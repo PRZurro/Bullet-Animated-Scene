@@ -38,6 +38,11 @@ namespace prz
 		virtual void auxiliar_update(float deltaTime) = 0;
 
 	public:
+
+		void set_transformation(btTransform& newTransformation);
+		void reset_transformation(btVector3& newOrigin, btQuaternion& newRotation);
+
+	public:
 		
 		operator PSPtr<gltModel>() { return model_; }
 		operator PSPtr<btRigidBody>() { return rigidBody_; }

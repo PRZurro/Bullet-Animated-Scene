@@ -18,7 +18,9 @@ namespace prz
 {
 
 	class Scene;
-	class Rigid_Body;
+	class Dynamic_Rigid_Body;
+	class Kinematic_Rigid_Body;
+	class Static_Rigid_Body;
 
 	class Entity
 	{
@@ -54,6 +56,11 @@ namespace prz
 		{
 			return rigidBodies_.find(name) != rigidBodies_.end();
 		}
+
+	public:
+
+		void translate(btVector3& translation);
+		
 	public:
 
 		PSPtr<Rigid_Body> get_rigid_body(const PString& name)
@@ -70,6 +77,12 @@ namespace prz
 	protected:
 
 		PMap<PString, PSPtr<Rigid_Body>> rigidBodies_;
+
+	protected:
+
+		PMap<PString, PSPtr<Dynamic_Rigid_Body>> dynamicRigidBodies_;
+		PMap<PString, PSPtr<Kinematic_Rigid_Body>> kinematicRigidBodies_;
+		PMap<PString, PSPtr<Static_Rigid_Body>> staticRigidBodies_;
 
 	protected:
 
