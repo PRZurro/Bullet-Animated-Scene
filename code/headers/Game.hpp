@@ -12,14 +12,9 @@
 #ifndef BULLET_ANIMATED_SCENE_GAME_H_
 #define BULLET_ANIMATED_SCENE_GAME_H_
 
-#include <Scene.hpp>
-
-#include <Utilities.hpp>
-
 #include <Declarations.hpp>
-#include <SFML/Window.hpp>
 
-#include <cassert>
+#include <SFML/Window.hpp>
 
 using namespace sf;
 
@@ -27,6 +22,7 @@ namespace prz
 {
 
 	class Input_Manager;
+	class Scene;
 
 	class Game
 	{
@@ -36,8 +32,9 @@ namespace prz
 		(
 			unsigned int windowWidth, 
 			unsigned int windowHeight,
-			const PString& windowTitle = "PRZuro OpenGL Scene",
-			bool vSync = true, const WindowStyle& windowStyle = DEFAULT,
+			const PString& windowTitle = "PRZuro Bullet Animated Scene",
+			bool vSync = true, const 
+			WindowStyle& windowStyle = DEFAULT,
 			unsigned int depth = 32
 		);
 

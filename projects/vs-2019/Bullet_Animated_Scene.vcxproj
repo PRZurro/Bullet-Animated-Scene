@@ -13,11 +13,14 @@
   <ItemGroup>
     <ClCompile Include="..\..\code\sources\Catapult.cpp" />
     <ClCompile Include="..\..\code\sources\Collision_Listener.cpp" />
+    <ClCompile Include="..\..\code\sources\Collision_Shapes_Loader.cpp" />
+    <ClCompile Include="..\..\code\sources\Demo_Scene_01.cpp" />
     <ClCompile Include="..\..\code\sources\Door.cpp" />
     <ClCompile Include="..\..\code\sources\Dynamic_Rigid_Body.cpp" />
     <ClCompile Include="..\..\code\sources\Entity.cpp" />
     <ClCompile Include="..\..\code\sources\Game.cpp" />
     <ClCompile Include="..\..\code\sources\Game_Manager.cpp" />
+    <ClCompile Include="..\..\code\sources\Game_Manager_Demo_Scene_01.cpp" />
     <ClCompile Include="..\..\code\sources\Key.cpp" />
     <ClCompile Include="..\..\code\sources\Kinematic_Rigid_Body.cpp" />
     <ClCompile Include="..\..\code\sources\main.cpp" />
@@ -33,12 +36,14 @@
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\Catapult.hpp" />
     <ClInclude Include="..\..\code\headers\Collision_Listener.hpp" />
-    <ClInclude Include="..\..\code\headers\Constraint.hpp" />
+    <ClInclude Include="..\..\code\headers\Collision_Shapes_Loader.hpp" />
+    <ClInclude Include="..\..\code\headers\Demo_Scene_01.hpp" />
     <ClInclude Include="..\..\code\headers\Door.hpp" />
     <ClInclude Include="..\..\code\headers\Dynamic_Rigid_Body.hpp" />
     <ClInclude Include="..\..\code\headers\Entity.hpp" />
     <ClInclude Include="..\..\code\headers\Game.hpp" />
     <ClInclude Include="..\..\code\headers\Game_Manager.hpp" />
+    <ClInclude Include="..\..\code\headers\Game_Manager_Demo_Scene_01.hpp" />
     <ClInclude Include="..\..\code\headers\Input_Manager.hpp" />
     <ClInclude Include="..\..\code\headers\internal\Declarations.hpp" />
     <ClInclude Include="..\..\code\headers\internal\Declarations_Bullet.hpp" />
@@ -47,7 +52,7 @@
     <ClInclude Include="..\..\code\headers\internal\Declarations_OpenGL_Toolkit.hpp" />
     <ClInclude Include="..\..\code\headers\internal\Utilities.hpp" />
     <ClInclude Include="..\..\code\headers\Key.hpp" />
-    <ClInclude Include="..\..\code\headers\Kinematic_Rigid_Body .hpp" />
+    <ClInclude Include="..\..\code\headers\Kinematic_Rigid_Body.hpp" />
     <ClInclude Include="..\..\code\headers\Platform.hpp" />
     <ClInclude Include="..\..\code\headers\Projectile.hpp" />
     <ClInclude Include="..\..\code\headers\Rigid_Body.hpp" />
@@ -62,7 +67,7 @@
     <ProjectGuid>{3EF241B2-8C38-4489-B097-10094EDDF232}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>BulletIntroduction</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
     <ProjectName>Bullet_Animated_Scene</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -107,7 +112,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>SFML_STATIC;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ENABLE_EXTENDED_ALIGNED_STORAGE;SFML_STATIC;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>../../libraries/bullet-2.87/src;../../libraries/opengl-toolkit/headers;../../libraries/sfml-2.4.2-windows-vc15-32bit/include;../../code/headers/internal;../../code/headers</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
@@ -126,7 +131,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>SFML_STATIC;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_ENABLE_EXTENDED_ALIGNED_STORAGE;SFML_STATIC;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>../../libraries/bullet-2.87/src;../../libraries/opengl-toolkit/headers;../../libraries/sfml-2.4.2-windows-vc15-32bit/include;../../code/headers/internal;../../code/headers</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>

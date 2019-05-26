@@ -6,4 +6,8 @@ namespace prz
 		Entity(scene, name)
 	{
 	}
+	void Key::update(float deltaTime)
+	{
+		Entity::update(deltaTime);
+	}
 }

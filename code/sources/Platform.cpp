@@ -6,4 +6,8 @@ namespace prz
 		Entity(scene, name)
 	{
 	}
+	void Platform::update(float deltaTime)
+	{
+		Entity::update(deltaTime);
+	}
 }

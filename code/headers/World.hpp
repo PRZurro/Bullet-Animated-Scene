@@ -9,10 +9,10 @@
  * 
  */
 
-#include <Declarations.hpp>
-
 #ifndef BULLET_ANIMATED_SCENE_WORLD_H_
 #define BULLET_ANIMATED_SCENE_WORLD_H_
+
+#include <Declarations.hpp>
 
 namespace prz
 {
@@ -20,34 +20,23 @@ namespace prz
     {
 	public:
 
-		World();
+		World(btVector3& gravity = btVector3(0, -10, 0));
+		~World();
 
 	public:
 
-		PSPtr< btDiscreteDynamicsWorld> operator->()
-		{
-			return dynamicsWorld_;
-		}
+		btDiscreteDynamicsWorld* const operator->() const { return dynamicsWorld_; }
+		btDiscreteDynamicsWorld* const operator()() const { return dynamicsWorld_; }
+		btDiscreteDynamicsWorld* const operator*() const { return dynamicsWorld_; }
+		operator btDiscreteDynamicsWorld* const() const { return dynamicsWorld_; }
 
-		PSPtr< btDiscreteDynamicsWorld> operator()()
-		{
-			return dynamicsWorld_;
-		}
+	public:
 
-		PSPtr< btDiscreteDynamicsWorld> operator*()
-		{
-			return dynamicsWorld_;
-		}
-
-		operator btDiscreteDynamicsWorld*()
-		{
-			return dynamicsWorld_.get();
-		}
-
+		btDiscreteDynamicsWorld* const dynamicsWorld() const { return dynamicsWorld_; }
 
     private:
         
-        PSPtr<btDiscreteDynamicsWorld> dynamicsWorld_;
+		btDiscreteDynamicsWorld* dynamicsWorld_;
 
 	private:
 

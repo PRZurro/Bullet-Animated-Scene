@@ -25,9 +25,6 @@
     <Filter Include="Source Files\Core">
       <UniqueIdentifier>{d19477c7-e0bc-4159-adf0-0f75e22c18f9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Entities">
-      <UniqueIdentifier>{bb30f985-2e94-4cd9-86df-efab04ecd471}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Bullet Physics">
       <UniqueIdentifier>{2983b046-8fda-42f2-82b3-9f053cff2ce4}</UniqueIdentifier>
     </Filter>
@@ -40,7 +37,22 @@
     <Filter Include="Source Files\Bullet Physics\Rigid Bodies">
       <UniqueIdentifier>{1e41758b-9604-4aef-9b1b-e74a6162cd88}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Entities">
+    <Filter Include="Source Files\Scenes">
+      <UniqueIdentifier>{fd2926f3-4918-4d72-be1c-f3572bb1044e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scenes">
+      <UniqueIdentifier>{735392fb-c439-49b7-bb53-6db15b00597c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scenes\Demo Scene 01">
+      <UniqueIdentifier>{eb611173-64f9-4acb-8ee2-409c343b339b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Scenes\Demo Scene 01\Entities">
+      <UniqueIdentifier>{bb30f985-2e94-4cd9-86df-efab04ecd471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scenes\Demo Scene 01">
+      <UniqueIdentifier>{2788d351-7d25-4a35-838b-22e83f28106c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scenes\Demo Scene 01\Entities">
       <UniqueIdentifier>{c769daa0-4b9d-4234-9229-9122ed386fb3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -79,25 +91,34 @@
       <Filter>Source Files\Bullet Physics</Filter>
     </ClCompile>
     <ClCompile Include="..\..\code\sources\Catapult.cpp">
-      <Filter>Source Files\Entities</Filter>
+      <Filter>Source Files\Scenes\Demo Scene 01\Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\code\sources\Key.cpp">
-      <Filter>Source Files\Entities</Filter>
+      <Filter>Source Files\Scenes\Demo Scene 01\Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\code\sources\Platform.cpp">
-      <Filter>Source Files\Entities</Filter>
+      <Filter>Source Files\Scenes\Demo Scene 01\Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\code\sources\Projectile.cpp">
-      <Filter>Source Files\Entities</Filter>
+      <Filter>Source Files\Scenes\Demo Scene 01\Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\code\sources\Stage.cpp">
-      <Filter>Source Files\Entities</Filter>
+      <Filter>Source Files\Scenes\Demo Scene 01\Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\code\sources\Door.cpp">
-      <Filter>Source Files\Entities</Filter>
+      <Filter>Source Files\Scenes\Demo Scene 01\Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\..\code\sources\Kinematic_Rigid_Body.cpp">
       <Filter>Source Files\Bullet Physics\Rigid Bodies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Demo_Scene_01.cpp">
+      <Filter>Source Files\Scenes\Demo Scene 01</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Game_Manager_Demo_Scene_01.cpp">
+      <Filter>Source Files\Scenes\Demo Scene 01</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\Collision_Shapes_Loader.cpp">
+      <Filter>Source Files\Bullet Physics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -128,13 +149,7 @@
     <ClInclude Include="..\..\code\headers\internal\Declarations_OpenGL_Toolkit.hpp">
       <Filter>Header Files\Internal</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\internal\Declarations_Bullet.hpp">
-      <Filter>Header Files\Internal</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\code\headers\World.hpp">
-      <Filter>Header Files\Bullet Physics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\Constraint.hpp">
       <Filter>Header Files\Bullet Physics</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Static_Rigid_Body.hpp">
@@ -156,28 +171,40 @@
       <Filter>Header Files\Bullet Physics</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Catapult.hpp">
-      <Filter>Header Files\Entities</Filter>
+      <Filter>Header Files\Scenes\Demo Scene 01\Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Door.hpp">
-      <Filter>Header Files\Entities</Filter>
+      <Filter>Header Files\Scenes\Demo Scene 01\Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Platform.hpp">
-      <Filter>Header Files\Entities</Filter>
+      <Filter>Header Files\Scenes\Demo Scene 01\Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Projectile.hpp">
-      <Filter>Header Files\Entities</Filter>
+      <Filter>Header Files\Scenes\Demo Scene 01\Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Key.hpp">
-      <Filter>Header Files\Entities</Filter>
+      <Filter>Header Files\Scenes\Demo Scene 01\Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Stage.hpp">
-      <Filter>Header Files\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\Kinematic_Rigid_Body .hpp">
-      <Filter>Header Files\Bullet Physics\Rigid Bodies</Filter>
+      <Filter>Header Files\Scenes\Demo Scene 01\Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Rigid_Body.hpp">
       <Filter>Header Files\Bullet Physics\Rigid Bodies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\internal\Declarations_Bullet.hpp">
+      <Filter>Header Files\Internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Kinematic_Rigid_Body.hpp">
+      <Filter>Header Files\Bullet Physics\Rigid Bodies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Collision_Shapes_Loader.hpp">
+      <Filter>Header Files\Bullet Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Demo_Scene_01.hpp">
+      <Filter>Header Files\Scenes\Demo Scene 01</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Game_Manager_Demo_Scene_01.hpp">
+      <Filter>Header Files\Scenes\Demo Scene 01</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

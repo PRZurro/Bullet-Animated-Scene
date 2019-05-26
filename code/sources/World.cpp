@@ -2,8 +2,14 @@
 
 namespace prz
 {
-	World::World() :
+	World::World(btVector3& gravity) :
 		collisionDispatcher_(&collisionConfiguration_),
-		dynamicsWorld_(make_shared<btDiscreteDynamicsWorld>(&collisionDispatcher_, &overlappingPairCache_, &constraintSolver_, &collisionConfiguration_))
-	{}
+		dynamicsWorld_(new btDiscreteDynamicsWorld(&collisionDispatcher_, &overlappingPairCache_, &constraintSolver_, &collisionConfiguration_))
+	{
+		dynamicsWorld_->setGravity(gravity);
+	}
+	World::~World()
+	{
+		delete dynamicsWorld_;
+	}
 }

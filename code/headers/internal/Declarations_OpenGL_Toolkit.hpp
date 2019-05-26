@@ -31,6 +31,8 @@ namespace prz
 	using gltNode = glt::Node;
 	using gltRenderNode = glt::Render_Node;
 
+	using gltVec3 = glt::Vector3;
+
 } // !namespace prz
 
 #endif // !BULLET_ANIMATED_SCENE_DECLARATIONS_OPENGL_TOOLKIT_H_

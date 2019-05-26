@@ -26,13 +26,14 @@ namespace prz
 		Static_Rigid_Body
 		(
 			const PString& name,
+			PSPtr<Model> model,
 			btVector3& origin,
-			btQuaternion& initialRotation,
 			PSPtr<btCollisionShape> collisionShape,
+			btQuaternion initialRotation = btQuaternion::getIdentity(),
 			float scale = 1.f
 		);
 
-		~Static_Rigid_Body();
+		~Static_Rigid_Body(){}
 
 	public:
 

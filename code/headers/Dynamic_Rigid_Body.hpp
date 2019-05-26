@@ -26,10 +26,11 @@ namespace prz
 		Dynamic_Rigid_Body
 		(
 			const PString& name,
+			PSPtr<Model> model,
 			btVector3& origin,
-			btQuaternion& initialRotation,
 			PSPtr<btCollisionShape> collisionShape,
 			btScalar mass,
+			btQuaternion initialRotation = btQuaternion::getIdentity(),
 			btVector3 localInertia = btVector3(0, 0, 0),
 			float scale = 1.f
 		);

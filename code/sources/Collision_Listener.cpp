@@ -18,7 +18,9 @@ namespace prz
 	}
 	Collision_Listener::Collision_Listener(PSPtr<World> world) :
 		world_(world)
-	{}
+	{
+	
+	}
 	void Collision_Listener::register_collisions()
 	{
 		if (world_)

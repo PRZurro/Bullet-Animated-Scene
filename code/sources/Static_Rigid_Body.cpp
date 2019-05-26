@@ -7,11 +7,12 @@ namespace prz
 	Static_Rigid_Body::Static_Rigid_Body
 	(
 		const PString& name,
+		PSPtr<Model> model,
 		btVector3& origin,
-		btQuaternion& initialRotation,
 		PSPtr<btCollisionShape> collisionShape,
+		btQuaternion initialRotation,
 		float scale
 	) :
-		Rigid_Body(name, origin, initialRotation, RB_Construct_Info(collisionShape, 0.f), scale)
+		Rigid_Body(name, model, origin, initialRotation, RB_Construct_Info(collisionShape, 0.f), scale)
 	{}
 }

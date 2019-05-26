@@ -18,6 +18,7 @@ namespace prz
 {
 
 	class Scene;
+	class Rigid_Body;
 	class Dynamic_Rigid_Body;
 	class Kinematic_Rigid_Body;
 	class Static_Rigid_Body;
@@ -25,10 +26,16 @@ namespace prz
 	class Entity
 	{
 	public:
-
-		Entity(Scene& scene, const PString& name) :
+ 
+		Entity
+		(
+			Scene& scene,
+			const PString& name,
+			gltVec3 startPosition = gltVec3(0.f, 0.f, 0.f)
+		) :
 			sceneParent_(scene),
-			name_(name)
+			name_(name),
+			startPosition_(startPosition)
 		{}
 
 		~Entity() {}
@@ -39,16 +46,43 @@ namespace prz
 
 	public:
 
-		bool add_rigid_body(const PString& name, PSPtr<Rigid_Body> rigidBody)
-		{
-			if (!exists_rigid_body(name))
-			{
-				rigidBodies_[name] = rigidBody;
-				return true;
-			}
+		bool add_kinematic_rigid_body(const PString& name, PSPtr<Kinematic_Rigid_Body> kinematicRigidBody);
+		bool add_static_rigid_body(const PString& name, PSPtr<Static_Rigid_Body> staticRigidBody);
+		bool add_dynamic_rigid_body(const PString& name, PSPtr<Dynamic_Rigid_Body> dynamicRigidBody);
+		
+	public:
 
-			return false;
-		}
+		PSPtr<Dynamic_Rigid_Body> create_dynamic_rigid_body
+		(	
+			const PString& name,
+			PSPtr<Model> model,
+			btVector3& origin,
+			PSPtr<btCollisionShape> collisionShape,
+			btScalar mass,
+			btQuaternion initialRotation = btQuaternion::getIdentity(),
+			btVector3 localInertia = btVector3(0, 0, 0),
+			float scale = 1.f
+		);
+		
+		PSPtr<Static_Rigid_Body> create_static_rigid_body
+		(
+			const PString& name,
+			PSPtr<Model> model,
+			btVector3& origin,
+			PSPtr<btCollisionShape> collisionShape,
+			btQuaternion initialRotation = btQuaternion::getIdentity(),
+			float scale = 1.f
+		);
+
+		PSPtr<Kinematic_Rigid_Body> create_kinematic_rigid_body
+		(
+			const PString& name,
+			PSPtr<Model> model,
+			btVector3& origin,
+			PSPtr<btCollisionShape> collisionShape,
+			btQuaternion initialRotation = btQuaternion::getIdentity(),
+			float scale = 1.f
+		);
 
 	public:
 
@@ -68,11 +102,27 @@ namespace prz
 			return exists_rigid_body(name) ? rigidBodies_[name] : PSPtr<Rigid_Body>();
 		}
 
+		PSPtr<Dynamic_Rigid_Body> get_dynamic_rigid_body(const PString& name)
+		{
+			return exists_rigid_body(name) ? dynamicRigidBodies_[name] : PSPtr<Dynamic_Rigid_Body>();
+		}
+
+		PSPtr<Kinematic_Rigid_Body> get_kinematic_rigid_body(const PString& name)
+		{
+			return exists_rigid_body(name) ? kinematicRigidBodies_[name] : PSPtr<Kinematic_Rigid_Body>();
+		}
+
+		PSPtr<Static_Rigid_Body> get_static_rigid_body(const PString& name)
+		{
+			return exists_rigid_body(name) ? staticRigidBodies_[name] : PSPtr<Static_Rigid_Body>();
+		}
+
 	public:
 
 		PMap<PString, PSPtr<Rigid_Body>>& rigidBodies() { return rigidBodies_; }
 		Scene& scene() { return sceneParent_; }
 		const PString& name() const { return name_; }
+		const PString& type() const { return type_; }
 
 	protected:
 
@@ -90,7 +140,15 @@ namespace prz
 
 	protected:
 
+		gltVec3 startPosition_;
+
+	protected:
+
 		PString name_;
+
+	protected:
+
+		PString type_;
 	
 	};
 

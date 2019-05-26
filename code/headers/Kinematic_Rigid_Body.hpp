@@ -26,13 +26,15 @@ namespace prz
 		Kinematic_Rigid_Body
 		(
 			const PString& name,
+			PSPtr<Model> model,
 			btVector3& origin,
-			btQuaternion& initialRotation,
 			PSPtr<btCollisionShape> collisionShape,
+			btQuaternion initialRotation = btQuaternion::getIdentity(),
 			float scale = 1.f
 		);
 
-		~Kinematic_Rigid_Body();
+		~Kinematic_Rigid_Body()
+		{}
 
 	public:
 

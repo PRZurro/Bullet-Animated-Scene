@@ -18,6 +18,7 @@ namespace prz
 {
 
 	class Scene;
+	class Collision_Listener;
 
 	class Game_Manager
 	{
@@ -28,7 +29,7 @@ namespace prz
 
 	public:
 
-		void update();
+		virtual void manage_game(float deltaTime, PSPtr<Collision_Listener> collisionListeners) = 0;
 
 	public:
 

@@ -9,20 +9,23 @@ namespace prz
 	Rigid_Body::Rigid_Body
 	(
 		const PString& name,
+		PSPtr<Model> model,
 		btVector3& origin,
 		btQuaternion& initialRotation,
 		RB_Construct_Info constructionInfo,
 		float scale
 	) :
+		model_(model),
 		scale_(scale)
 	{
-		constructionInfo.motionState = make_shared<btMotionState>(create_transformation(origin, initialRotation));
-		rigidBody_ = make_shared<btRigidBody>(constructionInfo);
+		constructionInfo.motionState.reset(new btDefaultMotionState(create_transformation(origin, initialRotation)));
+		rigidBody_ = new btRigidBody(constructionInfo);
 
 		sync_model_with_rigid_body();
 	}
 	Rigid_Body::~Rigid_Body()
 	{
+		delete rigidBody_;
 	}
 	void Rigid_Body::update(float deltaTime)
 	{

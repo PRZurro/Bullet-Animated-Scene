@@ -7,4 +7,8 @@ namespace prz
 		Entity(scene, name)
 	{
 	}
+	void Catapult::update(float deltaTime)
+	{
+		Entity::update(deltaTime);
+	}
 }

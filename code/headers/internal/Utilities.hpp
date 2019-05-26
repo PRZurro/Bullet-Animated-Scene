@@ -23,7 +23,7 @@ namespace prz
 	////////////////////////////////////////////BULLET///////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////////////////////
 
-	btTransform create_transformation(btVector3& newOrigin, btQuaternion newRotation)
+	static btTransform create_transformation(btVector3& newOrigin, btQuaternion newRotation)
 	{
 		btTransform transform;
 

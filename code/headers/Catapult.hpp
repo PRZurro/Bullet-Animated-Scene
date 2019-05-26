@@ -24,6 +24,9 @@ namespace prz
 		Catapult(Scene& scene, const PString& name);
 		
 	protected:
+
+		void update(float deltaTime) override; 
+
 	private:
 	};
 

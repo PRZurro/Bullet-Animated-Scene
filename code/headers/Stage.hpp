@@ -22,9 +22,11 @@ namespace prz
 	public:
 
 		Stage(Scene& scene, const PString& name);
+		
+	public:
 
-	protected:
-	private:
+		void update(float deltaTime) override;
+
 	};
 
 } // !namespace prz

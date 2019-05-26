@@ -23,8 +23,10 @@ namespace prz
 
 		Key(Scene& scene, const PString& name);
 
-	protected:
-	private:
+	public:
+
+		void update(float deltaTime) override;
+
 	};
 
 } // !namespace prz

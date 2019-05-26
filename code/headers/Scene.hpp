@@ -1,5 +1,5 @@
 /**
- * @file View.hpp
+ * @file Scene.hpp
  * @author Pablo Rodríguez Zurro (przuro@gmail.com)
  * @brief 
  * @version 0.1
@@ -33,11 +33,11 @@ namespace prz
 	public:
 
 		Scene(Window& window);
+
 		~Scene()
 		{
-			world_.reset(); // Destroy the world before the rigidbodies
+			world_.reset(); // Destroy the world before the rigid bodies
 		}
-
 
 	public:
 
@@ -46,7 +46,7 @@ namespace prz
 
 	public:
 
-		virtual void initialize();
+		virtual void initialize() {}
 
 	public:
 
@@ -72,15 +72,18 @@ namespace prz
 	public:
 
 		PSPtr<Entity> get_entity(const PString& name) { return exists_entity(name) ? entities_[name] : PSPtr<Entity>(); }
-		PSPtr<btDiscreteDynamicsWorld> get_dynamics_world();
-		PSPtr<Game_Manager> gameManager() { return gameManager_; }
-		PSPtr<Collision_Listener> collisionListener() { return collisionListener_; }
-
+		btDiscreteDynamicsWorld* const get_dynamics_world();
 	public:
 
-		const PSPtr<Camera> activeCamera() const { return activeCamera_; }
-		PSPtr<World> world(){ return world_; }
+		PSPtr<World> world() { return world_; }
+		PSPtr<Game_Manager> gameManager() { return gameManager_; }
+		PSPtr<Collision_Listener> collisionListener() { return collisionListener_; }
+		gltCamera* const activeCamera() const { return renderer_->get_active_camera(); }
+		
+	protected:
 
+		void add_camera_and_lights_to_renderer();
+		
 	protected:
 
 		PMap<PString, PSPtr<Entity>> entities_;
@@ -95,11 +98,11 @@ namespace prz
 
 		Window& window_;
 		PSPtr<gltRenderNode> renderer_;
-		PSPtr<gltCamera> activeCamera_;
 
 	protected:
 
-		PSPtr<gltLight> light_;
+		PMap<PString, PSPtr<gltCamera>> cameras_;
+		PMap<PString, PSPtr<gltLight>> lights_;
 	};
 
 } // !namespace prz

@@ -12,7 +12,6 @@
 #ifndef BULLET_ANIMATED_SCENE_DECLARATIONS_BULLET_H_
 #define BULLET_ANIMATED_SCENE_DECLARATIONS_BULLET_H_
 
-
 #include <btBulletDynamicsCommon.h>
 #include "BulletCollision\CollisionDispatch\btGhostObject.h"
 

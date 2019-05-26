@@ -27,7 +27,8 @@ namespace prz
         ) : 
 			collisionShape(iCollisionShape),
             mass(iMass),
-			localInertia(iLocalInertia)
+			localInertia(iLocalInertia),
+			motionState()
         {
 			collisionShape->calculateLocalInertia(mass, localInertia);
         }
@@ -44,7 +45,7 @@ namespace prz
 		}
 
 		PSPtr<btCollisionShape> collisionShape;
-		PSPtr<btDefaultMotionState> motionState;
+		PSPtr <btDefaultMotionState> motionState;
 		btScalar mass;
 		btVector3 localInertia;
 		

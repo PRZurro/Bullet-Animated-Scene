@@ -9,10 +9,11 @@
  * 
  */
 
-#include <Declarations.hpp>
 
 #ifndef BULLET_ANIMATED_SCENE_RIGID_BODY_H_
 #define BULLET_ANIMATED_SCENE_RIGID_BODY_H_
+
+#include <Declarations.hpp>
 
 namespace prz
 {
@@ -23,6 +24,7 @@ namespace prz
         Rigid_Body
 		(
 			const PString& name,
+			PSPtr<Model> model,
 			btVector3& origin,
 			btQuaternion& initialRotation,
 			RB_Construct_Info constructionInfo,
@@ -30,7 +32,6 @@ namespace prz
 		);
 
 		~Rigid_Body();
-
 
 	public:
 
@@ -41,17 +42,20 @@ namespace prz
 
 		void set_transformation(btTransform& newTransformation);
 		void reset_transformation(btVector3& newOrigin, btQuaternion& newRotation);
+		void set_scale(float scale)
+		{
+			scale_ = scale;
+		}
 
 	public:
 		
 		operator PSPtr<gltModel>() { return model_; }
-		operator PSPtr<btRigidBody>() { return rigidBody_; }
-		operator btRigidBody*() { return rigidBody_.get(); }
+		operator btRigidBody* const() { return rigidBody_; }
 
 	public:
 
-		 PSPtr<gltModel> model() const { return model_; }
-		 PSPtr<btRigidBody> rigidBody() const { return rigidBody_; }
+		 PSPtr<gltModel> model() { return model_; }
+		 btRigidBody* const rigidBody() { return rigidBody_; }
 		 float scale() { return scale_; }
 
 	protected:
@@ -61,7 +65,7 @@ namespace prz
 	protected:
 
 		PSPtr<gltModel> model_;
-		PSPtr<btRigidBody> rigidBody_;
+		btRigidBody* rigidBody_; 
 
 	protected:
 
