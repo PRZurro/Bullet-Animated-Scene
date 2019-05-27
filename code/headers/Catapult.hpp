@@ -21,7 +21,7 @@ namespace prz
 	{
 	public:
 
-		Catapult(Scene& scene, const PString& name);
+		Catapult(Scene& scene, const PString& name, const gltVec3& startlPosition = gltVec3(0.f, 0.f, 0.f));
 		
 	protected:
 

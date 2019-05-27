@@ -20,7 +20,10 @@ namespace prz
 
 	void Scene::update(float deltaTime)
 	{
-		(*world_)->stepSimulation(deltaTime);
+		if (world_)
+		{
+			(*world_)->stepSimulation(deltaTime);
+		}
 
 		for (auto& pair : entities_)
 		{
@@ -41,7 +44,7 @@ namespace prz
 	void Scene::render(float deltaTime)
 	{
 		glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		glClearColor(0.5, 0.5, 0.5, 1.0);
+		glClearColor(0.2f, 0.2f, 0.2f, 1.f);
 
 		if (renderer_->get_active_camera())
 		{
@@ -58,8 +61,8 @@ namespace prz
 		if (activeCamera)
 		{
 			activeCamera->set_aspect_ratio(float(windowSize.x) / windowSize.y);
-
 		}
+
 		glViewport(0, 0, windowSize.x, windowSize.y);
 	}
 

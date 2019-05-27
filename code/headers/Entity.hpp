@@ -31,7 +31,7 @@ namespace prz
 		(
 			Scene& scene,
 			const PString& name,
-			gltVec3 startPosition = gltVec3(0.f, 0.f, 0.f)
+			const gltVec3& startPosition = gltVec3(0.f, 0.f, 0.f)
 		) :
 			sceneParent_(scene),
 			name_(name),
@@ -61,7 +61,7 @@ namespace prz
 			btScalar mass,
 			btQuaternion initialRotation = btQuaternion::getIdentity(),
 			btVector3 localInertia = btVector3(0, 0, 0),
-			float scale = 1.f
+			const gltVec3& scale = gltVec3(1.f, 1.f, 1.f)
 		);
 		
 		PSPtr<Static_Rigid_Body> create_static_rigid_body
@@ -71,7 +71,7 @@ namespace prz
 			btVector3& origin,
 			PSPtr<btCollisionShape> collisionShape,
 			btQuaternion initialRotation = btQuaternion::getIdentity(),
-			float scale = 1.f
+			const gltVec3& scale = gltVec3(1.f, 1.f, 1.f)
 		);
 
 		PSPtr<Kinematic_Rigid_Body> create_kinematic_rigid_body
@@ -81,7 +81,7 @@ namespace prz
 			btVector3& origin,
 			PSPtr<btCollisionShape> collisionShape,
 			btQuaternion initialRotation = btQuaternion::getIdentity(),
-			float scale = 1.f
+			const gltVec3& scale = gltVec3(1.f, 1.f, 1.f)
 		);
 
 	public:

@@ -1,6 +1,5 @@
 #include <Rigid_Body.hpp>
 
-#include <Rigid_Body_Construction_Info.hpp>
 #include <Utilities.hpp>
 
 namespace prz
@@ -13,13 +12,16 @@ namespace prz
 		btVector3& origin,
 		btQuaternion& initialRotation,
 		RB_Construct_Info constructionInfo,
-		float scale
+		const gltVec3& scale
 	) :
 		model_(model),
-		scale_(scale)
+		name_(name),
+		constructionInfo_(constructionInfo)
 	{
-		constructionInfo.motionState.reset(new btDefaultMotionState(create_transformation(origin, initialRotation)));
-		rigidBody_ = new btRigidBody(constructionInfo);
+		constructionInfo_.motionState.reset(new btDefaultMotionState(create_transformation(origin, initialRotation)));
+		rigidBody_ = new btRigidBody(constructionInfo_);
+
+		set_scale(scale);
 
 		sync_model_with_rigid_body();
 	}
@@ -47,10 +49,12 @@ namespace prz
 		btTransform physicsTransform;
 		Matrix44 bulletTransform;
 
+		btMotionState* m = rigidBody_->getMotionState();
+
 		rigidBody_->getMotionState()->getWorldTransform(physicsTransform);
 		physicsTransform.getOpenGLMatrix(glm::value_ptr(bulletTransform));
 
 		model_->set_transformation(bulletTransform);
-		model_->scale(scale_); // Reset the lost scale in the OpenGL matrix calculation from bullet
+		model_->scale(scale_.x, scale_.y, scale_.z); // Reset the lost scale in the OpenGL matrix calculation from bullet
 	}
 }

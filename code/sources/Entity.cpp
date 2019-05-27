@@ -69,7 +69,7 @@ namespace prz
 		return false;
 	}
 
-	PSPtr<Dynamic_Rigid_Body> Entity::create_dynamic_rigid_body(const PString& name, PSPtr<Model> model, btVector3& origin, PSPtr<btCollisionShape> collisionShape, btScalar mass, btQuaternion initialRotation, btVector3 localInertia, float scale)
+	PSPtr<Dynamic_Rigid_Body> Entity::create_dynamic_rigid_body(const PString& name, PSPtr<Model> model, btVector3& origin, PSPtr<btCollisionShape> collisionShape, btScalar mass, btQuaternion initialRotation, btVector3 localInertia, const gltVec3& scale)
 	{
 		if (add_dynamic_rigid_body(name, make_shared<Dynamic_Rigid_Body>
 		(
@@ -89,7 +89,7 @@ namespace prz
 		return PSPtr<Dynamic_Rigid_Body>();
 	}
 
-	PSPtr<Static_Rigid_Body> Entity::create_static_rigid_body(const PString& name, PSPtr<Model> model, btVector3& origin, PSPtr<btCollisionShape> collisionShape, btQuaternion initialRotation, float scale)
+	PSPtr<Static_Rigid_Body> Entity::create_static_rigid_body(const PString& name, PSPtr<Model> model, btVector3& origin, PSPtr<btCollisionShape> collisionShape, btQuaternion initialRotation, const gltVec3& scale)
 	{
 		if (add_static_rigid_body(name, make_shared<Static_Rigid_Body>
 		(
@@ -107,7 +107,7 @@ namespace prz
 		return PSPtr<Static_Rigid_Body>();
 	}
 
-	PSPtr<Kinematic_Rigid_Body> Entity::create_kinematic_rigid_body(const PString& name, PSPtr<Model> model, btVector3& origin, PSPtr<btCollisionShape> collisionShape, btQuaternion initialRotation, float scale)
+	PSPtr<Kinematic_Rigid_Body> Entity::create_kinematic_rigid_body(const PString& name, PSPtr<Model> model, btVector3& origin, PSPtr<btCollisionShape> collisionShape, btQuaternion initialRotation, const gltVec3& scale)
 	{
 		if (add_kinematic_rigid_body(name, make_shared<Kinematic_Rigid_Body>
 		(

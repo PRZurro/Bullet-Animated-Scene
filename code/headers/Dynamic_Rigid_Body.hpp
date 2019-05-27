@@ -32,7 +32,7 @@ namespace prz
 			btScalar mass,
 			btQuaternion initialRotation = btQuaternion::getIdentity(),
 			btVector3 localInertia = btVector3(0, 0, 0),
-			float scale = 1.f
+			const gltVec3& scale = gltVec3(1.f, 1.f, 1.f)
 		);
 
 		~Dynamic_Rigid_Body();

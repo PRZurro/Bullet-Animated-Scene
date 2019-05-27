@@ -13,10 +13,13 @@
 #ifndef BULLET_ANIMATED_SCENE_RIGID_BODY_H_
 #define BULLET_ANIMATED_SCENE_RIGID_BODY_H_
 
+#include <Rigid_Body_Construction_Info.hpp>
+
 #include <Declarations.hpp>
 
 namespace prz
 {
+
     class Rigid_Body
     {
     public:
@@ -28,7 +31,7 @@ namespace prz
 			btVector3& origin,
 			btQuaternion& initialRotation,
 			RB_Construct_Info constructionInfo,
-			float scale = 1.f
+			const gltVec3& scale = gltVec3(1.f, 1.f, 1.f)
 		);
 
 		~Rigid_Body();
@@ -42,9 +45,14 @@ namespace prz
 
 		void set_transformation(btTransform& newTransformation);
 		void reset_transformation(btVector3& newOrigin, btQuaternion& newRotation);
-		void set_scale(float scale)
+
+		void set_scale(gltVec3 scale)
 		{
 			scale_ = scale;
+		}
+		void set_scale(float scale)
+		{
+			scale_ = gltVec3(scale, scale, scale);
 		}
 
 	public:
@@ -56,7 +64,8 @@ namespace prz
 
 		 PSPtr<gltModel> model() { return model_; }
 		 btRigidBody* const rigidBody() { return rigidBody_; }
-		 float scale() { return scale_; }
+		 const gltVec3& scale() { return scale_; }
+		 const PString& name() { return name_; };
 
 	protected:
 
@@ -69,7 +78,15 @@ namespace prz
 
 	protected:
 
-		float scale_;
+		gltVec3 scale_;
+
+	protected:
+
+		PString name_;
+
+	protected:
+
+		Rigid_Body_Construction_Info constructionInfo_;
 
     };
 

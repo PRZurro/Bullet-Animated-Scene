@@ -13,10 +13,11 @@ namespace prz
 		btScalar mass,
 		btQuaternion initialRotation,
 		btVector3 localInertia,
-		float scale
+		const gltVec3& scale
 	) :
 		Rigid_Body(name, model, origin, initialRotation, RB_Construct_Info(collisionShape, mass, localInertia), scale)
 	{
+		//rigidBody_->setCollisionFlags(rigidBody_->getCollisionFlags() | btCollisionObject::CF_);
 		rigidBody_->setActivationState(DISABLE_DEACTIVATION);
 	}
 

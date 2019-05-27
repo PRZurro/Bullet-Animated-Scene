@@ -30,7 +30,7 @@ namespace prz
 			btVector3& origin,
 			PSPtr<btCollisionShape> collisionShape,
 			btQuaternion initialRotation = btQuaternion::getIdentity(),
-			float scale = 1.f
+			const gltVec3& scale = gltVec3(1.f, 1.f, 1.f)
 		);
 
 		~Kinematic_Rigid_Body()

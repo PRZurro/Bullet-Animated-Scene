@@ -35,6 +35,9 @@ namespace prz
 
 		operator btRigidBody::btRigidBodyConstructionInfo()
 		{
+
+			btDefaultMotionState* motionStatess = motionState.get();
+
 			return btRigidBody::btRigidBodyConstructionInfo
 			(
 				mass,
@@ -45,7 +48,7 @@ namespace prz
 		}
 
 		PSPtr<btCollisionShape> collisionShape;
-		PSPtr <btDefaultMotionState> motionState;
+		PSPtr<btDefaultMotionState> motionState;
 		btScalar mass;
 		btVector3 localInertia;
 		

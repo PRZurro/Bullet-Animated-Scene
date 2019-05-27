@@ -3,8 +3,8 @@
 
 namespace prz
 {
-	Catapult::Catapult(Scene& scene, const PString& name) :
-		Entity(scene, name)
+	Catapult::Catapult(Scene& scene, const PString& name, const gltVec3& startPosition) :
+		Entity(scene, name, startPosition)
 	{
 	}
 	void Catapult::update(float deltaTime)

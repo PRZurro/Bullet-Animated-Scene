@@ -11,8 +11,10 @@ namespace prz
 		btVector3& origin,
 		PSPtr<btCollisionShape> collisionShape,
 		btQuaternion initialRotation,
-		float scale
+		const gltVec3& scale
 	) :
 		Rigid_Body(name, model, origin, initialRotation, RB_Construct_Info(collisionShape, 0.f), scale)
-	{}
+	{
+		rigidBody_->setCollisionFlags(rigidBody_->getCollisionFlags() | btCollisionObject::CF_STATIC_OBJECT);
+	}
 }

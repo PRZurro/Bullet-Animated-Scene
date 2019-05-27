@@ -9,7 +9,7 @@ namespace prz
 		btVector3& origin,
 		PSPtr<btCollisionShape> collisionShape,
 		btQuaternion initialRotation,
-		float scale
+		const gltVec3& scale
 	) :
 		Static_Rigid_Body(name, model, origin, collisionShape, initialRotation, scale)
 	{

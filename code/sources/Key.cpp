@@ -2,8 +2,8 @@
 
 namespace prz
 {
-	Key::Key(Scene& scene, const PString& name) :
-		Entity(scene, name)
+	Key::Key(Scene& scene, const PString& name, const gltVec3& startPosition) :
+		Entity(scene, name, startPosition)
 	{
 	}
 	void Key::update(float deltaTime)

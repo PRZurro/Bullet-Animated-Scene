@@ -21,7 +21,7 @@ namespace prz
 	{
 	public:
 
-		Key(Scene& scene, const PString& name);
+		Key(Scene& scene, const PString& name, const gltVec3& startlPosition = gltVec3(0.f, 0.f, 0.f));
 
 	public:
 
