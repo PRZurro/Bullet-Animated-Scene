@@ -21,11 +21,30 @@ namespace prz
 	{
 	public:
 
-		Platform(Scene& scene, const PString& name, const gltVec3& startlPosition = gltVec3(0.f, 0.f, 0.f));
+		Platform
+		(
+			Scene& scene,
+			const PString& name,
+			const gltVec3& startPosition = gltVec3(0.f),
+			const gltVec3& finalPosition = gltVec3(0.f)
+		);
 
 	public:
 
 		void update(float deltaTime) override;
+
+	public:
+
+		void set_speed(float speed)
+		{
+			speed_ = speed;
+		}
+
+	private:
+
+		gltVec3 finalPosition_;
+		gltVec3 currentPosition_;
+		float speed_;
 
 	};
 

@@ -79,7 +79,8 @@ namespace prz
 		PSPtr<Game_Manager> gameManager() { return gameManager_; }
 		PSPtr<Collision_Listener> collisionListener() { return collisionListener_; }
 		gltCamera* const activeCamera() const { return renderer_->get_active_camera(); }
-		
+		PSPtr<gltRenderNode> renderer() { return renderer_; }
+
 	protected:
 
 		void add_camera_and_lights_to_renderer();

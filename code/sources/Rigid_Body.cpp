@@ -20,6 +20,8 @@ namespace prz
 	{
 		constructionInfo_.motionState.reset(new btDefaultMotionState(create_transformation(origin, initialRotation)));
 		rigidBody_ = new btRigidBody(constructionInfo_);
+		rigidBody_->setFriction(0.7f);
+		rigidBody_->setRestitution(0.7f);
 
 		set_scale(scale);
 

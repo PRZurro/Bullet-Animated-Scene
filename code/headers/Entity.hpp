@@ -31,7 +31,7 @@ namespace prz
 		(
 			Scene& scene,
 			const PString& name,
-			const gltVec3& startPosition = gltVec3(0.f, 0.f, 0.f)
+			const gltVec3& startPosition = gltVec3(0.f)
 		) :
 			sceneParent_(scene),
 			name_(name),
@@ -94,7 +94,7 @@ namespace prz
 	public:
 
 		void translate(btVector3& translation);
-		
+
 	public:
 
 		PSPtr<Rigid_Body> get_rigid_body(const PString& name)

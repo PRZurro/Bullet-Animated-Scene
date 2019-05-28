@@ -5,6 +5,7 @@
 #include <Dynamic_Rigid_Body.hpp>
 #include <Kinematic_Rigid_Body.hpp>
 #include <Static_Rigid_Body.hpp>
+#include <Utilities.hpp>
 
 namespace prz
 {
@@ -75,7 +76,7 @@ namespace prz
 		(
 			name,
 			model,
-			origin + btVector3(startPosition_.x, startPosition_.y, startPosition_.z),
+			origin + bt_vec3_from(startPosition_),
 			collisionShape,
 			mass,
 			initialRotation,

@@ -29,4 +29,29 @@ namespace prz
 		newTrans.getRotation() *= rotation;
 		set_transformation(newTrans);
 	}
+
+	float Kinematic_Rigid_Body::move_to(const gltVec3& to, float speed)
+	{
+		gltVec3 from = extract_translation(model_->get_transformation());
+		gltVec3 direction = glm::normalize(to - from);
+
+		btVector3 btDirection = btVector3(direction.x, direction.y, direction.z);
+		btVector3 totalTranslation = btDirection * speed;
+
+		translate(totalTranslation);
+
+		return glm::length(to - from);
+	}
+
+	void Kinematic_Rigid_Body::sync_model_with_rigid_body()
+	{
+		// Instead of get the motion state, it should take the 
+		btTransform physicsTransform = rigidBody_->getWorldTransform();
+		Matrix44 bulletTransform;
+
+		physicsTransform.getOpenGLMatrix(glm::value_ptr(bulletTransform));
+
+		model_->set_transformation(bulletTransform);
+		model_->scale(scale_.x, scale_.y, scale_.z); // Reset the
+	}
 }

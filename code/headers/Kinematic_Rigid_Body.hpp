@@ -45,6 +45,11 @@ namespace prz
 		void translate(btVector3& translation);
 		void rotate(btQuaternion& rotation);
 		
+		virtual float move_to(const gltVec3& to, float speed);
+
+	public: 
+
+		void sync_model_with_rigid_body() override;
 	};
 
 } // !namespace prz

@@ -35,7 +35,7 @@ namespace prz
 
 		Scene& scene() { return scene_; }
 
-	private:
+	protected:
 
 		Scene& scene_;
 

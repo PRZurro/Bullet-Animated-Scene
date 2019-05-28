@@ -69,7 +69,7 @@ namespace prz
 
 	protected:
 
-		void sync_model_with_rigid_body();
+		virtual void sync_model_with_rigid_body();
 
 	protected:
 

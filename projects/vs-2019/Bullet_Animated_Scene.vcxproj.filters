@@ -120,6 +120,9 @@
     <ClCompile Include="..\..\code\sources\Collision_Shapes_Loader.cpp">
       <Filter>Source Files\Bullet Physics</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\sources\Target.cpp">
+      <Filter>Source Files\Scenes\Demo Scene 01\Entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\internal\Declarations.hpp">
@@ -205,6 +208,9 @@
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Game_Manager_Demo_Scene_01.hpp">
       <Filter>Header Files\Scenes\Demo Scene 01</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\Target.hpp">
+      <Filter>Header Files\Scenes\Demo Scene 01\Entities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -32,6 +32,11 @@ namespace prz
 		transform.setRotation(newRotation);
 
 		return transform;
+	} 
+
+	static btVector3 bt_vec3_from(const gltVec3& vector)
+	{
+		return btVector3(vector.x, vector.y, vector.z);
 	}
 
 	/////////////////////////////////////////////////////////////////////////////////////////

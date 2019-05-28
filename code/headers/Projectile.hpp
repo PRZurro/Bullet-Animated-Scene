@@ -21,11 +21,13 @@ namespace prz
 	{
 	public:
 
-		Projectile(Scene& scene, const PString& name, const gltVec3& startlPosition = gltVec3(0.f, 0.f, 0.f));
-
-	public:
-
-		void update(float deltaTime) override;
+		Projectile
+		(
+			Scene& scene,
+			const PString& name,
+			const gltVec3& startPosition = gltVec3(0.f),
+			float size = 1.f
+		);
 
 	};
 

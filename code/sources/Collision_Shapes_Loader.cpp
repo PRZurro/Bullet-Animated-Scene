@@ -53,6 +53,11 @@ namespace prz
 		}
 	}
 
+	PSPtr<btCollisionShape> Collision_Shapes_Loader::load_box_collision_shape(const gltVec3& dimensions)
+	{
+		return load_box_collision_shape(dimensions.x, dimensions.y, dimensions.z);
+	}
+
 	PSPtr<btCollisionShape> Collision_Shapes_Loader::get_collision_shape(const PString& name)
 	{
 		if (exists_collision_shape(name))

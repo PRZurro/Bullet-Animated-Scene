@@ -45,6 +45,7 @@ namespace prz
 		PSPtr<btCollisionShape> load_sphere_collision_shape(float radius);
 		PSPtr<btCollisionShape> load_cylinder_collision_shape(float radius, float halfHeight);
 		PSPtr<btCollisionShape> load_box_collision_shape(float width, float height, float length);
+		PSPtr<btCollisionShape> load_box_collision_shape(const gltVec3& dimensions);
 		
 	public:
 

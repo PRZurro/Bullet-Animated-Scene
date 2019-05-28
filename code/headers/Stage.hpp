@@ -21,7 +21,7 @@ namespace prz
 	{
 	public:
 
-		Stage(Scene& scene, const PString& name, const gltVec3& startlPosition = gltVec3(0.f, 0.f, 0.f));
+		Stage(Scene& scene, const PString& name, const gltVec3& startPosition = gltVec3(0.f));
 		
 	public:
 

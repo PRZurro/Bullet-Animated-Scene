@@ -44,7 +44,7 @@ namespace prz
 	void Scene::render(float deltaTime)
 	{
 		glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		glClearColor(0.2f, 0.2f, 0.2f, 1.f);
+		glClearColor(0.95f, 0.68f, 0.07f, 1.f);
 
 		if (renderer_->get_active_camera())
 		{
