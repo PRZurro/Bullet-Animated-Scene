@@ -127,7 +127,7 @@ namespace prz
 		return PSPtr<Kinematic_Rigid_Body>();
 	}
 
-	PSPtr<btHingeConstraint> Entity::join_rigid_bodies(const PString& nameRigidBodyA, const PString& nameRigidBodyB, const btVector3& pivotA, const btVector3& pivotB, const btVector3& axisA, const btVector3& axisB)
+	PSPtr<btHingeConstraint> Entity::join_rigid_bodies(const PString& nameRigidBodyA, const PString& nameRigidBodyB, const btVector3& pivotA, const btVector3& pivotB, const btVector3& axisA, const btVector3& axisB, bool disableCollide)
 	{
 		if (exists_rigid_body(nameRigidBodyA) && exists_rigid_body(nameRigidBodyB))
 		{
@@ -144,7 +144,7 @@ namespace prz
 				axisB
 			));
 
-			sceneParent_.get_dynamics_world()->addConstraint(hingeConstraint.get(), true);
+			sceneParent_.get_dynamics_world()->addConstraint(hingeConstraint.get(), disableCollide);
 
 			return hingeConstraints_[nameRigidBodyA + nameRigidBodyB] = hingeConstraint;
 		}

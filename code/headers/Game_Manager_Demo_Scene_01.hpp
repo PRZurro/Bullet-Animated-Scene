@@ -25,8 +25,13 @@ namespace prz
 
 	public:
 
-		void manage_game(float deltaTime, PSPtr<Collision_Listener> collisionListeners) override;
+		void manage_game(float deltaTime, PSPtr<Collision_Listener> collisionListener) override;
 
+	private:
+
+		float timerProjectileSpawner_;
+		bool canSpawnProjecitile_;
+		bool doorsOpened_;
 	};
 
 } // !namespace prz

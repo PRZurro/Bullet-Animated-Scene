@@ -16,7 +16,7 @@
 
 namespace prz
 {
-	class World;
+	class World;		
 
 	class Collision_Listener
 	{

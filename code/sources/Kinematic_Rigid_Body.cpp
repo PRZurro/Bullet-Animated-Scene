@@ -34,6 +34,8 @@ namespace prz
 		btTransform newTrans = rigidBody_->getWorldTransform();
 		newTrans.getRotation() *= rotation;
 		set_transformation(newTrans);
+
+		// NOT WORKING
 	}
 
 	float Kinematic_Rigid_Body::move_to(const gltVec3& to, float speed, float deltaTime)

@@ -32,6 +32,8 @@ namespace prz
 	using gltRenderNode = glt::Render_Node;
 
 	using gltVec3 = glt::Vector3;
+	using gltVec4 = glt::Vector4;
+	using gltMat44 = glt::Matrix44;
 
 } // !namespace prz
 

@@ -3,6 +3,7 @@
 #include <Kinematic_Rigid_Body.hpp>
 #include <Game.hpp>
 #include <Collision_Shapes_Loader.hpp>
+#include <Utilities.hpp>
 
 namespace prz
 {
@@ -11,13 +12,13 @@ namespace prz
 		finalPosition_(finalPosition),
 		speed_(0.f)
 	{	
-		gltVec3 doorDimensions = gltVec3(0.25, 5.f, 2.f);
+		gltVec3 doorDimensions = gltVec3(0.25, 50.f, 2.f);
 
 		PSPtr<Kinematic_Rigid_Body> door = create_kinematic_rigid_body
 		(
 			"Door",
 			make_shared<gltModelObj>(Game::assetsFolderPath() + "models/obj/cube.obj"),
-			btVector3(0, 0, 0),
+			bt_vec3_from(gltVec3(0.f)),
 			Collision_Shapes_Loader::instance().load_box_collision_shape(doorDimensions),
 			linearFactor,
 			btQuaternion::getIdentity(),

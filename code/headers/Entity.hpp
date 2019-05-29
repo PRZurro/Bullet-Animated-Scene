@@ -60,7 +60,7 @@ namespace prz
 			PSPtr<btCollisionShape> collisionShape,
 			btScalar mass,
 			btQuaternion initialRotation = btQuaternion::getIdentity(),
-			btVector3 localInertia = btVector3(0, 0, 0),
+			btVector3 localInertia = btVector3(0.f, 0.f, 0.f),
 			const gltVec3& scale = gltVec3(1.f, 1.f, 1.f)
 		);
 		
@@ -94,7 +94,8 @@ namespace prz
 			const btVector3& pivotA,
 			const btVector3& pivotB,
 			const btVector3& axisA,
-			const btVector3& axisB
+			const btVector3& axisB,
+			bool disableCollide = true
 		);
 
 	public:

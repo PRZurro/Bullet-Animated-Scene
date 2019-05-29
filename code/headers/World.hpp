@@ -20,7 +20,7 @@ namespace prz
     {
 	public:
 
-		World(btVector3& gravity = btVector3(0, -10, 0));
+		World(btVector3& gravity = btVector3(0.f, -10.f, 0.f));
 		~World();
 
 	public:

@@ -44,13 +44,13 @@ namespace prz
 			floorShapeDimensions
 		);
 
-		gltVec3 wallShapeDimensions(0.5f, 5.f, 1.25f);
+		gltVec3 wallShapeDimensions(0.5f, 100.f, 1.25f);
 
 		PSPtr<Static_Rigid_Body> wall01 = create_static_rigid_body
 		(
 			"Wall_01",
 			make_shared<gltModelObj>(Game::assetsFolderPath() + "models/obj/cube.obj"),
-			btVector3(-1.25f, 5.35f, 5.3f),
+			btVector3(-1.25f, wallShapeDimensions.y, 5.3f),
 			shapesLoader.load_box_collision_shape(wallShapeDimensions),
 			btQuaternion::getIdentity(),
 			wallShapeDimensions
@@ -60,7 +60,7 @@ namespace prz
 		(
 			"Wall_02",
 			make_shared<gltModelObj>(Game::assetsFolderPath() + "models/obj/cube.obj"),
-			btVector3(-1.25f, 5.35f, -5.3),
+			btVector3(-1.25f, wallShapeDimensions.y, -5.3),
 			shapesLoader.load_box_collision_shape(wallShapeDimensions),
 			btQuaternion::getIdentity(),
 			wallShapeDimensions

@@ -21,12 +21,26 @@ namespace prz
 	{
 	public:
 
-		Key(Scene& scene, const PString& name, const gltVec3& startPosition = gltVec3(0.f));
+		Key
+		(
+			Scene& scene,
+			const PString& name,
+			const gltVec3& linearFactor,
+			const gltVec3& startPosition = gltVec3(0.f),
+			const gltVec3& finalPosition = gltVec3(0.f),
+			float speed = 1.f
+		);
 
 	public:
 
 		void update(float deltaTime) override;
 
+	private:
+
+		PSPtr<Kinematic_Rigid_Body> keyRB_;
+		float speed_;
+		gltVec3 prevPoint_;
+		gltVec3 nextPoint_;
 	};
 
 } // !namespace prz

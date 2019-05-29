@@ -11,13 +11,13 @@ namespace prz
 		finalPosition_(finalPosition),
 		speed_(0.f)
 	{
-		gltVec3 platformDimensions(1.5f, 0.7f, 3.f);
+		gltVec3 platformDimensions(2.1f, 0.7f, 3.5f);
 
 		PSPtr<Kinematic_Rigid_Body> door = create_kinematic_rigid_body
 		(
 			"Platform",
 			make_shared<gltModelObj>(Game::assetsFolderPath() + "models/obj/cube.obj"),
-			btVector3(0, 0, 0),
+			btVector3(0.f, 0.f, 0.f),
 			Collision_Shapes_Loader::instance().load_box_collision_shape(platformDimensions),
 			linearFactor,
 			btQuaternion::getIdentity(),

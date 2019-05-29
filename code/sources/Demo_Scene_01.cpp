@@ -39,7 +39,7 @@ namespace prz
 
 		lights_["Light01"]->translate(gltVec3(0.f, 8.f, 0.f));
 		lights_["Light01"]->set_intensity(0.75f);
-		lights_["Light01"]->set_color(gltVec3(0.8f, 1.f, 0.3f));
+		lights_["Light01"]->set_color(gltVec3(1.f, 1.f, 1.f));
 
 		lights_["Light02"]->translate(gltVec3(0.f, 10.f, 1.f));
 		lights_["Light02"]->set_intensity(1.5f);
@@ -58,8 +58,8 @@ namespace prz
 			*this,
 			"DoorL",
 			gltVec3(0.f, 0.f, 1.f), // Linear factor
-			gltVec3(-2.f, 5.f, 2.f),
-			gltVec3(-2.f, 5.f, 6.f)
+			gltVec3(-2.f, 50.f, 2.f),
+			gltVec3(-2.f, 50.f, 6.f)
 		)));
 
 		PSPtr<Entity> rightDoor = add_entity(PSPtr<Door>(make_shared<Door>
@@ -67,8 +67,8 @@ namespace prz
 			*this,
 			"DoorR",
 			gltVec3(0.f, 0.f, 1.f), // Linear factor
-			gltVec3(-2.f, 5.f, -2.f),
-			gltVec3(-2.f, 5.f, -6.f)
+			gltVec3(-2.f, 50.f, -2.f),
+			gltVec3(-2.f, 50.f, -6.f)
 		)));
 
 		PSPtr<Entity> platform = add_entity(PSPtr<Platform>(make_shared<Platform>
@@ -80,8 +80,6 @@ namespace prz
 			gltVec3(5.f, 0.0f, -2.5f)
 		)));
 
-		PSPtr<Entity> projectileTest = add_entity(PSPtr<Projectile>(make_shared<Projectile>(*this, "Projectile", gltVec3(9.f, 3.f, 3.5f))));
-
 		PSPtr<Entity> target = add_entity(PSPtr<Target>(make_shared<Target>
 		(
 			*this,
@@ -90,13 +88,21 @@ namespace prz
 			gltVec3(0.25f, 10.f, 4.f)
 		)));
 
-		//PSPtr<Entity> catapult = add_entity(PSPtr<Catapult>(make_shared<Catapult>
-		//	(
-		//		*this,
-		//		"Catapult",
-		//		gltVec3(15.f, 6.5f, 0.f)
-		//		)));
+		PSPtr<Entity> catapult = add_entity(PSPtr<Catapult>(make_shared<Catapult>
+		(
+			*this,
+			"Catapult",
+			gltVec3(15.f, 10.f, 0.f)
+		)));
 
-		//PSPtr<Entity> key = add_entity(PSPtr<Key>(make_shared<Key>(*this, "Key")));
+		PSPtr<Entity> key = add_entity(PSPtr<Key>(make_shared<Key>
+		(
+			*this,
+			"Key",
+			gltVec3(0.f, 0.f, 1.f),
+			gltVec3(1.5f, 3.f, 2.5f),
+			gltVec3(1.5f, 3.f, -2.f),
+			1.2f
+		)));
 	}
 }

@@ -23,7 +23,7 @@ namespace prz
         (
             PSPtr<btCollisionShape> iCollisionShape,
             btScalar iMass,
-            btVector3 iLocalInertia = btVector3(0, 0, 0)
+            btVector3 iLocalInertia = btVector3(0.f, 0.f, 0.f)
         ) : 
 			collisionShape(iCollisionShape),
             mass(iMass),
