@@ -65,6 +65,8 @@ namespace prz
 			btQuaternion::getIdentity(),
 			wallShapeDimensions
 		);
+
+		type_ = "Stage";
 	}
 	void Stage::update(float deltaTime)
 	{

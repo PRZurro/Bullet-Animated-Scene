@@ -36,10 +36,10 @@ namespace prz
 
 		void register_collisions();
 
-
 	public:
 
 		bool has_bodies_collided(btRigidBody* bodyA, btRigidBody* bodyB);
+		bool has_bodies_collided(const PString& typeA, const PString& typeB);
 
 	private:
 
@@ -47,7 +47,8 @@ namespace prz
 
 	private:
 
-		PMap< btCollisionObject* , btCollisionObject*> collisionsRegistry_;
+		PMap<btCollisionObject* , btCollisionObject*> collisionsRegistry_;
+		PMap<PString, PString> collisionsRegistryByEntityType_;
 
 	private:
 

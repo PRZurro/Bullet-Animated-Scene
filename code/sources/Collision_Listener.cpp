@@ -1,6 +1,7 @@
 #include <Collision_Listener.hpp>
 
 #include <World.hpp>
+#include <Entity.hpp>
 
 namespace prz
 {
@@ -16,11 +17,25 @@ namespace prz
 
 		return false;
 	}
+
+	bool Collision_Listener::has_bodies_collided(const PString& typeA, const PString& typeB)
+	{
+
+		if (collisionsRegistryByEntityType_.find(typeA) != collisionsRegistryByEntityType_.end())
+		{
+			if (collisionsRegistryByEntityType_[typeA] == typeB)
+			{
+				return true;
+			}
+		}
+
+		return false;
+	}
+
 	Collision_Listener::Collision_Listener(PSPtr<World> world) :
 		world_(world)
-	{
-	
-	}
+	{}
+
 	void Collision_Listener::register_collisions()
 	{
 		if (world_)
@@ -50,5 +65,15 @@ namespace prz
 	{
 		collisionsRegistry_[objectA] = objectB; 
 		collisionsRegistry_[objectB] = objectA;
+
+		Entity* entityA = (Entity*)objectA->getUserPointer();
+		Entity* entityB = (Entity*)objectB->getUserPointer();
+
+		PString typeA = entityA->type();
+		PString typeB = entityB->type();
+
+		collisionsRegistryByEntityType_[typeA] = typeB;
+		collisionsRegistryByEntityType_[typeB] = typeA;
+
 	}
 }

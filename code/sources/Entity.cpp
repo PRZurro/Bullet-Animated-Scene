@@ -108,7 +108,7 @@ namespace prz
 		return PSPtr<Static_Rigid_Body>();
 	}
 
-	PSPtr<Kinematic_Rigid_Body> Entity::create_kinematic_rigid_body(const PString& name, PSPtr<Model> model, btVector3& origin, PSPtr<btCollisionShape> collisionShape, btQuaternion initialRotation, const gltVec3& scale)
+	PSPtr<Kinematic_Rigid_Body> Entity::create_kinematic_rigid_body(const PString& name, PSPtr<Model> model, btVector3& origin, PSPtr<btCollisionShape> collisionShape, const gltVec3& linearFactor, btQuaternion initialRotation, const gltVec3& scale)
 	{
 		if (add_kinematic_rigid_body(name, make_shared<Kinematic_Rigid_Body>
 		(
@@ -116,6 +116,7 @@ namespace prz
 			model,
 			origin + btVector3(startPosition_.x, startPosition_.y, startPosition_.z),
 			collisionShape,
+			linearFactor,
 			initialRotation,
 			scale
 		)))
@@ -124,6 +125,31 @@ namespace prz
 		}
 
 		return PSPtr<Kinematic_Rigid_Body>();
+	}
+
+	PSPtr<btHingeConstraint> Entity::join_rigid_bodies(const PString& nameRigidBodyA, const PString& nameRigidBodyB, const btVector3& pivotA, const btVector3& pivotB, const btVector3& axisA, const btVector3& axisB)
+	{
+		if (exists_rigid_body(nameRigidBodyA) && exists_rigid_body(nameRigidBodyB))
+		{
+			btRigidBody* rigidBodyA = *rigidBodies_[nameRigidBodyA];
+			btRigidBody* rigidBodyB = *rigidBodies_[nameRigidBodyB];
+
+			PSPtr<btHingeConstraint> hingeConstraint = PSPtr<btHingeConstraint>(make_shared<btHingeConstraint>
+			(
+				*rigidBodyA,
+				*rigidBodyB,
+				pivotA,
+				pivotB, 
+				axisA, 
+				axisB
+			));
+
+			sceneParent_.get_dynamics_world()->addConstraint(hingeConstraint.get(), true);
+
+			return hingeConstraints_[nameRigidBodyA + nameRigidBodyB] = hingeConstraint;
+		}
+
+		return PSPtr<btHingeConstraint>();
 	}
 
 	void Entity::translate(btVector3& translation)

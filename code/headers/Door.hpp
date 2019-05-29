@@ -25,6 +25,7 @@ namespace prz
 		(
 			Scene& scene,
 			const PString& name,
+			const gltVec3& linearFactor,
 			const gltVec3& startPosition = gltVec3(0.f),
 			const gltVec3& finalPosition = gltVec3(0.f)
 		);

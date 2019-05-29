@@ -21,7 +21,7 @@ namespace prz
 		constructionInfo_.motionState.reset(new btDefaultMotionState(create_transformation(origin, initialRotation)));
 		rigidBody_ = new btRigidBody(constructionInfo_);
 		rigidBody_->setFriction(0.7f);
-		rigidBody_->setRestitution(0.7f);
+		rigidBody_->setRestitution(0.9f);
 
 		set_scale(scale);
 
@@ -29,7 +29,7 @@ namespace prz
 	}
 	Rigid_Body::~Rigid_Body()
 	{
-		delete rigidBody_;
+		/*delete rigidBody_;*/
 	}
 	void Rigid_Body::update(float deltaTime)
 	{

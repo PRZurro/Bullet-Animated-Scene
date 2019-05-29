@@ -29,8 +29,9 @@ namespace prz
 			PSPtr<Model> model,
 			btVector3& origin,
 			PSPtr<btCollisionShape> collisionShape,
+			const gltVec3& linearFactor,
 			btQuaternion initialRotation = btQuaternion::getIdentity(),
-			const gltVec3& scale = gltVec3(1.f, 1.f, 1.f)
+			const gltVec3& scale = gltVec3(1.f)
 		);
 
 		~Kinematic_Rigid_Body()
@@ -45,7 +46,7 @@ namespace prz
 		void translate(btVector3& translation);
 		void rotate(btQuaternion& rotation);
 		
-		virtual float move_to(const gltVec3& to, float speed);
+		virtual float move_to(const gltVec3& to, float speed, float deltaTime);
 
 	public: 
 

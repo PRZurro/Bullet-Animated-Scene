@@ -7,7 +7,7 @@ namespace prz
 	Dynamic_Rigid_Body::Dynamic_Rigid_Body
 	(
 		const PString& name,
-		PSPtr<Model> model,
+		PSPtr<gltModel> model,
 		btVector3& origin,
 		PSPtr<btCollisionShape> collisionShape,
 		btScalar mass,
@@ -17,7 +17,6 @@ namespace prz
 	) :
 		Rigid_Body(name, model, origin, initialRotation, RB_Construct_Info(collisionShape, mass, localInertia), scale)
 	{
-		//rigidBody_->setCollisionFlags(rigidBody_->getCollisionFlags() | btCollisionObject::CF_);
 		rigidBody_->setActivationState(DISABLE_DEACTIVATION);
 	}
 

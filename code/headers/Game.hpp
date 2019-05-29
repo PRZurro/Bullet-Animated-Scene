@@ -73,6 +73,7 @@ namespace prz
 			curTime = HighClock::now();
 
 			deltaTime_ = static_cast<float>(ElapsedTime(curTime - prevTime).count());
+
 			prevTime = curTime;
 		}
 

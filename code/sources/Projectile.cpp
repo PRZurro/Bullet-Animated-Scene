@@ -21,5 +21,7 @@ namespace prz
 			bt_vec3_from(gltVec3(0.f)),
 			gltVec3(size)
 		);
+
+		type_ = "Projectile";
 	}
 }

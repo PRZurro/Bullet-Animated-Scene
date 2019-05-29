@@ -54,42 +54,49 @@ namespace prz
 		PSPtr<Entity> stage = add_entity(PSPtr<Stage>(make_shared<Stage>(*this, "Stage")));
 
 		PSPtr<Entity> leftDoor = add_entity(PSPtr<Door>(make_shared<Door>
-			(
-				*this,
-				"DoorL",
-				gltVec3(-2.f, 5.f, 2.f),
-				gltVec3(-2.f, 5.f, 6.f)
-				)));
+		(
+			*this,
+			"DoorL",
+			gltVec3(0.f, 0.f, 1.f), // Linear factor
+			gltVec3(-2.f, 5.f, 2.f),
+			gltVec3(-2.f, 5.f, 6.f)
+		)));
 
 		PSPtr<Entity> rightDoor = add_entity(PSPtr<Door>(make_shared<Door>
-			(
-				*this,
-				"DoorR",
-				gltVec3(-2.f, 5.f, -2.f),
-				gltVec3(-2.f, 5.f, -6.f)
-				)));
+		(
+			*this,
+			"DoorR",
+			gltVec3(0.f, 0.f, 1.f), // Linear factor
+			gltVec3(-2.f, 5.f, -2.f),
+			gltVec3(-2.f, 5.f, -6.f)
+		)));
 
 		PSPtr<Entity> platform = add_entity(PSPtr<Platform>(make_shared<Platform>
 		(
 			*this,
 			"Platform",
+			gltVec3(1.f, 0.f, 1.f), // Linear factor
 			gltVec3(9.f, 0.f, 3.5f),
 			gltVec3(5.f, 0.0f, -2.5f)
 		)));
 
-		//PSPtr<Entity> projectileTest = add_entity(PSPtr<Projectile>(make_shared<Projectile>(*this, "Projectile", gltVec3(9.f, 3.f, 3.5f))));
+		PSPtr<Entity> projectileTest = add_entity(PSPtr<Projectile>(make_shared<Projectile>(*this, "Projectile", gltVec3(9.f, 3.f, 3.5f))));
 
 		PSPtr<Entity> target = add_entity(PSPtr<Target>(make_shared<Target>
 		(
 			*this,
 			"Target",
-			gltVec3(8.5f, 3.f, 2.5f),
-			gltVec3(1.f, 1.f, 1.f)
+			gltVec3(-15.5f, 10.f, 0.f),
+			gltVec3(0.25f, 10.f, 4.f)
 		)));
 
-		/*PSPtr<Entity> catapult = add_entity(PSPtr<Catapult>(make_shared<Catapult>(*this, "Catapult")));
-		PSPtr<Entity> door = add_entity(PSPtr<Door>(make_shared<Door>(*this, "Door")));
-		PSPtr<Entity> key = add_entity(PSPtr<Key>(make_shared<Key>(*this, "Key")));*/
+		//PSPtr<Entity> catapult = add_entity(PSPtr<Catapult>(make_shared<Catapult>
+		//	(
+		//		*this,
+		//		"Catapult",
+		//		gltVec3(15.f, 6.5f, 0.f)
+		//		)));
 
+		//PSPtr<Entity> key = add_entity(PSPtr<Key>(make_shared<Key>(*this, "Key")));
 	}
 }

@@ -80,8 +80,21 @@ namespace prz
 			PSPtr<Model> model,
 			btVector3& origin,
 			PSPtr<btCollisionShape> collisionShape,
+			const gltVec3& linearFactor,
 			btQuaternion initialRotation = btQuaternion::getIdentity(),
 			const gltVec3& scale = gltVec3(1.f, 1.f, 1.f)
+		);
+
+	public:
+
+		PSPtr<btHingeConstraint> join_rigid_bodies
+		(
+			const PString& nameRigidBodyA,
+			const PString& nameRigidBodyB,
+			const btVector3& pivotA,
+			const btVector3& pivotB,
+			const btVector3& axisA,
+			const btVector3& axisB
 		);
 
 	public:
@@ -133,6 +146,10 @@ namespace prz
 		PMap<PString, PSPtr<Dynamic_Rigid_Body>> dynamicRigidBodies_;
 		PMap<PString, PSPtr<Kinematic_Rigid_Body>> kinematicRigidBodies_;
 		PMap<PString, PSPtr<Static_Rigid_Body>> staticRigidBodies_;
+
+	protected:
+
+		PMap<PString, PSPtr<btHingeConstraint>> hingeConstraints_;
 
 	protected:
 
