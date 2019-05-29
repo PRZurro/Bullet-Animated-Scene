@@ -11,13 +11,65 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\code\sources\Catapult.cpp" />
+    <ClCompile Include="..\..\code\sources\Collision_Listener.cpp" />
+    <ClCompile Include="..\..\code\sources\Collision_Shapes_Loader.cpp" />
+    <ClCompile Include="..\..\code\sources\Demo_Scene_01.cpp" />
+    <ClCompile Include="..\..\code\sources\Door.cpp" />
+    <ClCompile Include="..\..\code\sources\Dynamic_Rigid_Body.cpp" />
+    <ClCompile Include="..\..\code\sources\Entity.cpp" />
+    <ClCompile Include="..\..\code\sources\Game.cpp" />
+    <ClCompile Include="..\..\code\sources\Game_Manager.cpp" />
+    <ClCompile Include="..\..\code\sources\Game_Manager_Demo_Scene_01.cpp" />
+    <ClCompile Include="..\..\code\sources\Key.cpp" />
+    <ClCompile Include="..\..\code\sources\Kinematic_Rigid_Body.cpp" />
     <ClCompile Include="..\..\code\sources\main.cpp" />
+    <ClCompile Include="..\..\code\sources\Platform.cpp" />
+    <ClCompile Include="..\..\code\sources\Projectile.cpp" />
+    <ClCompile Include="..\..\code\sources\Rigid_Body.cpp" />
+    <ClCompile Include="..\..\code\sources\Scene.cpp" />
+    <ClCompile Include="..\..\code\sources\Sensor.cpp" />
+    <ClCompile Include="..\..\code\sources\Stage.cpp" />
+    <ClCompile Include="..\..\code\sources\Static_Rigid_Body.cpp" />
+    <ClCompile Include="..\..\code\sources\Target.cpp" />
+    <ClCompile Include="..\..\code\sources\World.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\code\headers\Catapult.hpp" />
+    <ClInclude Include="..\..\code\headers\Collision_Listener.hpp" />
+    <ClInclude Include="..\..\code\headers\Collision_Shapes_Loader.hpp" />
+    <ClInclude Include="..\..\code\headers\Demo_Scene_01.hpp" />
+    <ClInclude Include="..\..\code\headers\Door.hpp" />
+    <ClInclude Include="..\..\code\headers\Dynamic_Rigid_Body.hpp" />
+    <ClInclude Include="..\..\code\headers\Entity.hpp" />
+    <ClInclude Include="..\..\code\headers\Game.hpp" />
+    <ClInclude Include="..\..\code\headers\Game_Manager.hpp" />
+    <ClInclude Include="..\..\code\headers\Game_Manager_Demo_Scene_01.hpp" />
+    <ClInclude Include="..\..\code\headers\Input_Manager.hpp" />
+    <ClInclude Include="..\..\code\headers\internal\Declarations.hpp" />
+    <ClInclude Include="..\..\code\headers\internal\Declarations_Bullet.hpp" />
+    <ClInclude Include="..\..\code\headers\internal\Declarations_SFML.hpp" />
+    <ClInclude Include="..\..\code\headers\internal\Declarations_STD.hpp" />
+    <ClInclude Include="..\..\code\headers\internal\Declarations_OpenGL_Toolkit.hpp" />
+    <ClInclude Include="..\..\code\headers\internal\Utilities.hpp" />
+    <ClInclude Include="..\..\code\headers\Key.hpp" />
+    <ClInclude Include="..\..\code\headers\Kinematic_Rigid_Body.hpp" />
+    <ClInclude Include="..\..\code\headers\Platform.hpp" />
+    <ClInclude Include="..\..\code\headers\Projectile.hpp" />
+    <ClInclude Include="..\..\code\headers\Rigid_Body.hpp" />
+    <ClInclude Include="..\..\code\headers\Rigid_Body_Construction_Info.hpp" />
+    <ClInclude Include="..\..\code\headers\Stage.hpp" />
+    <ClInclude Include="..\..\code\headers\Scene.hpp" />
+    <ClInclude Include="..\..\code\headers\Sensor.hpp" />
+    <ClInclude Include="..\..\code\headers\Static_Rigid_Body.hpp" />
+    <ClInclude Include="..\..\code\headers\Target.hpp" />
+    <ClInclude Include="..\..\code\headers\World.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3EF241B2-8C38-4489-B097-10094EDDF232}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>BulletIntroduction</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
     <ProjectName>Bullet_Animated_Scene</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -48,13 +100,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>../../bin/x32/release/</OutDir>
-    <TargetName>$(ProjectName)-x32-debug</TargetName>
+    <OutDir>../../bin/x86/debug/</OutDir>
+    <TargetName>$(ProjectName)-x86-debug</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>../../bin/x32/release/</OutDir>
-    <TargetName>$(ProjectName)-x32-release</TargetName>
+    <OutDir>../../bin/x86/release/</OutDir>
+    <TargetName>$(ProjectName)-x86-release</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -62,8 +114,8 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>SFML_STATIC;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../../libraries/bullet-2.87/src;../../libraries/opengl-toolkit/headers;../../libraries/sfml-2.4.2-windows-vc15-32bit/include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ENABLE_EXTENDED_ALIGNED_STORAGE;SFML_STATIC;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../libraries/bullet-2.87/src;../../libraries/opengl-toolkit/headers;../../libraries/sfml-2.4.2-windows-vc15-32bit/include;../../code/headers/internal;../../code/headers</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -81,8 +133,8 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>SFML_STATIC;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../../libraries/bullet-2.87/src;../../libraries/opengl-toolkit/headers;../../libraries/sfml-2.4.2-windows-vc15-32bit/include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_ENABLE_EXTENDED_ALIGNED_STORAGE;SFML_STATIC;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../libraries/bullet-2.87/src;../../libraries/opengl-toolkit/headers;../../libraries/sfml-2.4.2-windows-vc15-32bit/include;../../code/headers/internal;../../code/headers</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
