@@ -1,7 +1,7 @@
 /**
  * @file Game_Manager_Demo_Scene_01.hpp
- * @author Pablo Rodríguez Zurro (przuro@gmail.com)
- * @brief
+ * @author Pablo Rodriguez Zurro (przuro@gmail.com)
+ * @brief Logic manager of the example scene
  * @version 0.1
  * @date 24-05-2019
  *
@@ -16,15 +16,29 @@
 
 namespace prz
 {
-
+	/**
+	 * @brief Logic manager of the example scene
+	 * 
+	 */
 	class Game_Manager_Demo_Scene_01 : public Game_Manager
 	{
 	public:
 
+		/**
+		 * @brief Construct a new Game_Manager_Demo_Scene_01
+		 * 
+		 * @param scene 
+		 */
 		Game_Manager_Demo_Scene_01(Scene& scene);
 
 	public:
 
+		/**
+		 * @brief Method provided by the abstract class parent. 
+		 * 
+		 * @param deltaTime 
+		 * @param collisionListener 
+		 */
 		void manage_game(float deltaTime, PSPtr<Collision_Listener> collisionListener) override;
 
 	private:

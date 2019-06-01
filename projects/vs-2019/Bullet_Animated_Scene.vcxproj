@@ -28,7 +28,6 @@
     <ClCompile Include="..\..\code\sources\Projectile.cpp" />
     <ClCompile Include="..\..\code\sources\Rigid_Body.cpp" />
     <ClCompile Include="..\..\code\sources\Scene.cpp" />
-    <ClCompile Include="..\..\code\sources\Sensor.cpp" />
     <ClCompile Include="..\..\code\sources\Stage.cpp" />
     <ClCompile Include="..\..\code\sources\Static_Rigid_Body.cpp" />
     <ClCompile Include="..\..\code\sources\Target.cpp" />
@@ -60,7 +59,6 @@
     <ClInclude Include="..\..\code\headers\Rigid_Body_Construction_Info.hpp" />
     <ClInclude Include="..\..\code\headers\Stage.hpp" />
     <ClInclude Include="..\..\code\headers\Scene.hpp" />
-    <ClInclude Include="..\..\code\headers\Sensor.hpp" />
     <ClInclude Include="..\..\code\headers\Static_Rigid_Body.hpp" />
     <ClInclude Include="..\..\code\headers\Target.hpp" />
     <ClInclude Include="..\..\code\headers\World.hpp" />

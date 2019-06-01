@@ -20,7 +20,6 @@ namespace prz
 
 	void Game_Manager_Demo_Scene_01::manage_game(float deltaTime, PSPtr<Collision_Listener> collisionListener)
 	{
-
 		timerProjectileSpawner_ += deltaTime;
 
 		if (timerProjectileSpawner_ >= 1.f)

@@ -1,7 +1,7 @@
 /**
  * @file Key.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
- * @brief 
+ * @brief Class to manage and create a configured entity for the demo that represents a key. 
  * @version 0.1
  * @date 25-05-2019
  * 
@@ -17,10 +17,24 @@
 namespace prz
 {
 
+	/**
+	 * @brief Entity to manage and create a configured key for the demo. 
+	 * 
+	 */
 	class Key : public Entity
 	{
 	public:
 
+		/**
+		 * @brief Construct a new Key
+		 * 
+		 * @param scene 
+		 * @param name 
+		 * @param linearFactor 
+		 * @param startPosition 
+		 * @param finalPosition 
+		 * @param speed 
+		 */
 		Key
 		(
 			Scene& scene,
@@ -33,6 +47,11 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Update the key
+		 * 
+		 * @param deltaTime 
+		 */
 		void update(float deltaTime) override;
 
 	private:

@@ -1,7 +1,7 @@
 /**
  * @file Input_Manager.hpp
- * @author Pablo Rodríguez Zurro (przuro@gmail.com)
- * @brief 
+ * @author Pablo Rodriguez Zurro (przuro@gmail.com)
+ * @brief Save the keyboard and mouse pointer information collected from SFML	
  * @version 0.1
  * @date 23-05-2019
  * 
@@ -20,7 +20,10 @@ using namespace sf;
 
 namespace prz
 {
-
+	/**
+	 * @brief Save the keyboard and mouse pointer information collected from SFML	
+	 * 
+	 */
 	class Input_Manager
 	{
 	public:
@@ -96,6 +99,12 @@ namespace prz
 			return keysPressed_.count(key) == 1 && keysPressed_.at(key) == true;
 		}
 
+		/**
+		 * @brief Return if the mouse has been pressed
+		 * 
+		 * @return true 
+		 * @return false 
+		 */
 		bool is_mouse_pressed()
 		{
 			return isMousePressed_;
@@ -103,21 +112,41 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Return the current position in x axis of the mouse pointer
+		 * 
+		 * @return const unsigned& curMouseX 
+		 */
 		const unsigned int& curMouseX()
 		{
 			return curMouseX_;
 		}
 
+		/**
+		 * @brief Return the current position in y axis of the mouse pointer
+		 * 
+		 * @return const unsigned& curMouseY 
+		 */
 		const unsigned int& curMouseY()
 		{
 			return curMouseY_;
 		}
 
+		/**
+		 * @brief Return the previous position in x axis of the mouse pointer
+		 * 
+		 * @return const unsigned& prevMouseX 
+		 */
 		const unsigned int& prevMouseX()
 		{
 			return prevMouseX_;
 		}
 
+		/**
+		 * @brief Return the previous position in y axis of the mouse pointer
+		 * 
+		 * @return const unsigned& prevMouseY 
+		 */
 		const unsigned int& prevMouseY()
 		{
 			return prevMouseY_;

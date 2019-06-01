@@ -1,7 +1,7 @@
 /**
  * @file Projectile.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
- * @brief 
+ * @brief Entity with a dynamic rigid body with a spherical collision shape
  * @version 0.1
  * @date 25-05-2019
  * 
@@ -17,10 +17,22 @@
 namespace prz
 {
 
+	/**
+	 * @brief Entity with a dynamic rigid body with a spherical collision shape
+	 * 
+	 */
 	class Projectile : public Entity
 	{
 	public:
 
+		/**
+		 * @brief Construct a new Projectile
+		 * 
+		 * @param scene 
+		 * @param name 
+		 * @param startPosition 
+		 * @param size 
+		 */
 		Projectile
 		(
 			Scene& scene,

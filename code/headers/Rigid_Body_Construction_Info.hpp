@@ -1,7 +1,7 @@
 /**
  * @file Rigid_Body_Construction_Info.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
- * @brief 
+ * @brief Class to store the construction information of a rigid body
  * @version 0.1
  * @date 25-05-2019
  * 
@@ -17,6 +17,10 @@
 namespace prz
 {
 
+	/**
+	 * @brief Class to store the construction information of a rigid body
+	 * 
+	 */
 	struct Rigid_Body_Construction_Info
 	{
 		Rigid_Body_Construction_Info
@@ -33,6 +37,11 @@ namespace prz
 			collisionShape->calculateLocalInertia(mass, localInertia);
         }
 
+		/**
+		 * @brief Operator to return the bullet rigid body construction info by the stored values in this object
+		 * 
+		 * @return btRigidBody::btRigidBodyConstructionInfo 
+		 */
 		operator btRigidBody::btRigidBodyConstructionInfo()
 		{
 

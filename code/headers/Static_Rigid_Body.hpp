@@ -1,7 +1,7 @@
 /**
  * @file Static_Rigid_Body.hpp
- * @author Pablo Rodríguez Zurro (przuro@gmail.com)
- * @brief
+ * @author Pablo Rodriguez Zurro (przuro@gmail.com)
+ * @brief Rigid body that is not affected by physics (but can affect other rigid bodies) nor collisions and can't move 
  * @version 0.1
  * @date 24-05-2019
  *
@@ -19,10 +19,23 @@
 namespace prz
 {
 
+	/**
+	 * @brief Rigid body that is not affected by physics (but can affect other rigid bodies) nor collisions and can't move 
+	 */
 	class Static_Rigid_Body : public Rigid_Body
 	{
 	public:
 
+		/**
+		 * @brief Construct a new Static_Rigid_Body
+		 * 
+		 * @param name 
+		 * @param model 
+		 * @param origin 
+		 * @param collisionShape 
+		 * @param initialRotation 
+		 * @param scale 
+		 */
 		Static_Rigid_Body
 		(
 			const PString& name,
@@ -33,10 +46,19 @@ namespace prz
 			const gltVec3& scale = gltVec3(1.f, 1.f, 1.f)
 		);
 
+		/**
+		 * @brief Destroy the Static_Rigid_Body
+		 * 
+		 */
 		~Static_Rigid_Body(){}
 
 	public:
 
+		/**
+		 * @brief Not used
+		 * 
+		 * @param deltaTime 
+		 */
 		virtual void auxiliar_update(float deltaTime) override {}
 
 	};

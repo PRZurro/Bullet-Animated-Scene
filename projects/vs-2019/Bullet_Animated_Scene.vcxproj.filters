@@ -78,9 +78,6 @@
     <ClCompile Include="..\..\code\sources\Entity.cpp">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\sources\Sensor.cpp">
-      <Filter>Source Files\Bullet Physics</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\code\sources\Dynamic_Rigid_Body.cpp">
       <Filter>Source Files\Bullet Physics\Rigid Bodies</Filter>
     </ClCompile>
@@ -168,9 +165,6 @@
       <Filter>Header Files\Bullet Physics\Rigid Bodies</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Collision_Listener.hpp">
-      <Filter>Header Files\Bullet Physics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\Sensor.hpp">
       <Filter>Header Files\Bullet Physics</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\Catapult.hpp">

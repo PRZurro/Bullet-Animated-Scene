@@ -1,7 +1,7 @@
 /**
  * @file Demo_Scene_01.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
- * @brief 
+ * @brief Example of a scene 
  * @version 0.1
  * @date 26-05-2019
  * 
@@ -16,15 +16,27 @@
 
 namespace prz
 {
-    
+    /**
+     * @brief Example of a scene 
+     * 
+     */
     class Demo_Scene_01 : public Scene
     {
     public:
 
+        /**
+         * @brief Construct a new Demo Scene 1
+         * 
+         * @param window 
+         */
         Demo_Scene_01(Window& window);
 
 	public:
 
+        /**
+         * @brief Initialize the scene
+         * 
+         */
 		void initialize() override;
 
     };

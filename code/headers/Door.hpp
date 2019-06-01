@@ -1,7 +1,7 @@
 /**
  * @file Door.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
- * @brief 
+ * @brief Entity with a kinematic rigid body representing a part of a sliding door
  * @version 0.1
  * @date 25-05-2019
  * 
@@ -16,11 +16,24 @@
 
 namespace prz
 {
-
+	
+	/**
+	 * @brief Entity with a kinematic rigid body representing a part of a sliding door
+	 * 
+	 */
 	class Door : public Entity
 	{
 	public:
 		
+		/**
+		 * @brief Construct a new Door
+		 * 
+		 * @param scene 
+		 * @param name 
+		 * @param linearFactor 
+		 * @param startPosition 
+		 * @param finalPosition 
+		 */
 		Door
 		(
 			Scene& scene,
@@ -32,10 +45,20 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Update the door entity
+		 * 
+		 * @param deltaTime 
+		 */
 		void update(float deltaTime) override;
 
 	public: 
 
+		/**
+		 * @brief Set the speed
+		 * 
+		 * @param speed 
+		 */
 		void set_speed(float speed)
 		{
 			speed_ = speed;

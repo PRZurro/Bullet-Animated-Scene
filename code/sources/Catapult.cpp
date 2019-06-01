@@ -177,7 +177,7 @@ namespace prz
 			btVector3(0, 0.f, -1.f)
 		);
 
-		// Configure las settings of constraints 
+		// Configure the constraints settings  
 
 		frontWheelConstraintL_->setMaxMotorImpulse(50.f);
 		frontWheelConstraintR_->setMaxMotorImpulse(50.f);
@@ -194,10 +194,12 @@ namespace prz
 		armConstraint_->setLimit(0.f, 90.f);
 
 	}
+
 	void Catapult::update(float deltaTime)
 	{
 		Entity::update(deltaTime);
 	}
+
 	void Catapult::move_forward(float speed)
 	{
 		speed = -speed;
@@ -206,10 +208,12 @@ namespace prz
 		frontWheelConstraintL_->setMotorTargetVelocity(speed);
 		frontWheelConstraintR_->setMotorTargetVelocity(speed);
 	}
+
 	void Catapult::move_back(float speed)
 	{
 		move_forward(-speed);
 	}
+
 	void Catapult::turn_right(float speed)
 	{
 		frontWheelConstraintL_->setMotorTargetVelocity(speed);
@@ -218,6 +222,7 @@ namespace prz
 		frontWheelConstraintR_->setMotorTargetVelocity(-speed);
 		backWheelConstraintR_->setMotorTargetVelocity(-speed);
 	}
+
 	void Catapult::turn_left(float speed)
 	{
 		frontWheelConstraintR_->setMotorTargetVelocity(speed);
@@ -226,10 +231,12 @@ namespace prz
 		frontWheelConstraintL_->setMotorTargetVelocity(-speed);
 		backWheelConstraintL_->setMotorTargetVelocity(-speed);
 	}
+
 	void Catapult::use_arm(float speed)
 	{
 		armConstraint_->setMotorTargetVelocity(speed);
 	}
+
 	void Catapult::spawn_new_projectile()
 	{
 		sceneParent_.add_entity
@@ -243,12 +250,13 @@ namespace prz
 			)
 		);
 	}
+
 	void Catapult::disable_movement()
 	{
 		frontWheelConstraintL_->setMotorTargetVelocity(0.f);
 		frontWheelConstraintR_->setMotorTargetVelocity(0.f);
 		backWheelConstraintL_->setMotorTargetVelocity(0.f);
 		backWheelConstraintR_->setMotorTargetVelocity(0.f);
-		armConstraint_->setMotorTargetVelocity(-2.f);
+		armConstraint_->setMotorTargetVelocity(-2.f); // Setting to -2.f will automatically lower the arm. 
 	}
 }

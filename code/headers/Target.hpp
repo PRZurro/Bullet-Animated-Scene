@@ -1,7 +1,7 @@
 /**
  * @file Target.hpp
  * @author Pablo Rodríguez Zurro (przuro@gmail.com)
- * @brief 
+ * @brief Entity with a dynamic rigid body that is standing until recieves a collision
  * @version 0.1
  * @date 28-05-2019
  * 
@@ -17,10 +17,22 @@
 namespace prz
 {
 
+	/**
+	 * @brief Entity with a dynamic rigid body that is standing until recieves a collision
+	 * 
+	 */
     class Target : public Entity
     {
 	public:
 
+		/**
+		 * @brief Construct a new Target
+		 * 
+		 * @param scene 
+		 * @param name 
+		 * @param startPosition 
+		 * @param dimensions 
+		 */
 		Target
 		(
 			Scene& scene, 

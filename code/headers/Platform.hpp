@@ -1,7 +1,7 @@
 /**
  * @file Platform.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
- * @brief 
+ * @brief Entity class with a kinematic rigid body that represents a moving platform
  * @version 0.1
  * @date 25-05-2019
  * 
@@ -17,10 +17,23 @@
 namespace prz
 {
 
+	/**
+	 * @brief Entity class with a kinematic rigid body that represents a moving platform
+	 * 
+	 */
 	class Platform : public Entity
 	{
 	public:
 
+		/**
+		 * @brief Construct a new Platform
+		 * 
+		 * @param scene 
+		 * @param name 
+		 * @param linearFactor 
+		 * @param startPosition 
+		 * @param finalPosition 
+		 */
 		Platform
 		(
 			Scene& scene,
@@ -32,10 +45,20 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Update the platform entity
+		 * 
+		 * @param deltaTime 
+		 */
 		void update(float deltaTime) override;
 
 	public:
 
+		/**
+		 * @brief Set the speed
+		 * 
+		 * @param speed 
+		 */
 		void set_speed(float speed)
 		{
 			speed_ = speed;

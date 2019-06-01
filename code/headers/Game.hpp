@@ -1,7 +1,7 @@
 /**
  * @file Game.hpp
  * @author Pablo Rodriguez (przuro@gmail.com)
- * @brief 
+ * @brief Core class that encapsulates the workings of a game in a SFML application.
  * @version 0.1
  * @date 09-05-2019
  * 
@@ -23,11 +23,25 @@ namespace prz
 
 	class Input_Manager;
 	class Scene;
-
+	
+	/**
+	 * @brief Core class that encapsulates the workings of a game in a SFML application.
+	 * 
+	 */
 	class Game
 	{
 	public:
 
+		/**
+		 * @brief Construct a new Game
+		 * 
+		 * @param windowWidth 
+		 * @param windowHeight 
+		 * @param windowTitle 
+		 * @param vSync 
+		 * @param windowStyle 
+		 * @param depth 
+		 */
 		Game
 		(
 			unsigned int windowWidth, 
@@ -38,13 +52,25 @@ namespace prz
 			unsigned int depth = 32
 		);
 
+		/**
+		 * @brief Destroy the Game
+		 * 
+		 */
 		~Game()
 		{}
 
 	public:
 
+		/**
+		 * @brief Run the game
+		 * 
+		 */
 		void run();
 		
+		/**
+		 * @brief Stop the game
+		 * 
+		 */
 		void stop()
 		{
 			isRunning_ = false;
@@ -52,6 +78,12 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Return if the game is running
+		 * 
+		 * @return true 
+		 * @return false 
+		 */
 		bool isRunning()
 		{
 			return isRunning_;
@@ -59,6 +91,11 @@ namespace prz
 
 	public:
 
+		/**
+		 * @brief Return the assets folder path
+		 * 
+		 * @return const PString& 
+		 */
 		static const PString& assetsFolderPath()
 		{
 			return assetsFolderPath_;
@@ -66,8 +103,17 @@ namespace prz
 
 	private:
 
+		/**
+		 * @brief Store and handle some events
+		 * 
+		 * @param inputManager 
+		 */
 		void poll_events(Input_Manager& inputManager);
 		
+		/**
+		 * @brief Calculate the time between frames
+		 * 
+		 */
 		void calculate_delta_time() 
 		{
 			curTime = HighClock::now();

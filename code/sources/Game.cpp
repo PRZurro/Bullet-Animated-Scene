@@ -20,10 +20,10 @@ namespace prz
 			exit(-1);
 		}
 
-		/*cout << "Introduce assets folder relative path: ";
+		cout << "Introduce assets folder relative path: ";
 		cin >> assetsFolderPath_;
 		cout << endl;
-		assetsFolderPath_ += "/";*/
+		assetsFolderPath_ += "/";
 
 		scene_ = make_shared<Demo_Scene_01>(window_);
 		curTime = prevTime = HighClock::now();
